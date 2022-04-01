@@ -4,8 +4,8 @@ import NavBar from "../NavBar"
 const Layout = ({ children }) => {
     return (
         <S.PageLayout>
-            <NavBar/>
-            {children}
+            <NavBar />
+            <div className="content">{children}</div>
         </S.PageLayout>
     )
 }

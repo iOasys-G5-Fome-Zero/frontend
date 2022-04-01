@@ -3,9 +3,9 @@ import styled from "styled-components"
 const NavBarLink = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 10px 10px 5px 10px;
+    padding: 12px 12px 5px 12px;
     border-radius: 9999px;
-    font-weight: bold;
+    background-color: ${({ special }) => special ? "lightgray" : "initial"};
     &:hover {
         background-color: lightgray;
     }

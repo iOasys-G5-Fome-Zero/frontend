@@ -3,7 +3,7 @@ import * as S from "./styles"
 import { upperCaseFirstLetter } from "../../utils"
 import { useLocation } from "react-router-dom"
 
-const NavLink = ({ path, label }) => {
+const NavLink = ({ path, label, special }) => {
     const location = useLocation()
 
     const isCurrentPage = location.pathname === path
@@ -12,7 +12,7 @@ const NavLink = ({ path, label }) => {
 
     return (
         <Link to={path}>
-            <S.NavBarLink highlight={isCurrentPage}>
+            <S.NavBarLink highlight={isCurrentPage} special={special}>
                 <div className="label">
                     {upperCaseFirstLetter(label)}
                 </div>
