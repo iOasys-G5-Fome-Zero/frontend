@@ -7,13 +7,13 @@ const NavBarLink = styled.div`
     border-radius: 9999px;
     background-color: ${({ special }) => special ? "lightgray" : "initial"};
     &:hover {
-        background-color: lightgray;
+        background-color: ${({ disableHighlight }) => disableHighlight ? "initial" : "lightgray"};
     }
     .highlight{
         height: 5px;
         width: 10px;
         border-radius: 9999px;
-        background-color: ${({ highlight }) => highlight ? "black" : "transparent"};
+        background-color: ${({ highlight, disableHighlight }) => (highlight && !disableHighlight) ? "black" : "transparent"};
         margin: auto;
     }
 `

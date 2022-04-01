@@ -3,9 +3,9 @@ import AppleStoreLogo from "../../assets/AppleStoreLogo.png"
 import GooglePlayLogo from "../../assets/GooglePlayLogo.png"
 import * as S from "./styles"
 
-const StoresLinks = () => {
+const StoresLinks = ({ vertical }) => {
     return (
-        <S.Container>
+        <S.Container vertical={vertical}>
             <Link to="#">
                 <img src={AppleStoreLogo} alt="Disponível na AppStore" />
             </Link>
