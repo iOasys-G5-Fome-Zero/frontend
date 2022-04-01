@@ -1,4 +1,4 @@
-import FirstSection from "../FirstSection"
+
 import * as S from "./styles"
 
 const ThirdSection = () => {
