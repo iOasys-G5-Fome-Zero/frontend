@@ -7,6 +7,9 @@ const PageLayout = styled.div`
     .content{
         padding: 30px 150px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 `
 
