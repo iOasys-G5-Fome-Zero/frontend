@@ -19,8 +19,8 @@ const TestimonySection = () => {
                 <Testimony/>
             </div>
             <div className="right-testimonies">
-                <Testimony/>
-                <Testimony/>
+                <Testimony right={true}/>
+                <Testimony right={true}/>
             </div>
         </S.Container>
     )

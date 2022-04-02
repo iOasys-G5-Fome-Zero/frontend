@@ -1,9 +1,9 @@
 import * as S from "./styles"
 import quoteSrc from "../../../../assets/BlackQuotes.svg"
 
-const Testimony = () => {
+const Testimony = ({ right }) => {
     return (
-        <S.Container>
+        <S.Container right={right}>
             <div className="testimony">
                 <div className="small-quotes">
                     <img src={quoteSrc} alt="" />

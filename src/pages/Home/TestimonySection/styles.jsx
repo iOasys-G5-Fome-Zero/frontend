@@ -4,9 +4,8 @@ const Container = styled.section`
     margin: 50px 0px;
     width: 100%;
     display: flex;
-    gap: 40px;
+    gap: 30px;
     .quotes {
-        align-self: stretch;
         margin-top: 150px;
         img{
             width: 100px;

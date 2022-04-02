@@ -5,7 +5,7 @@ const PageLayout = styled.div`
     display: flex;
     flex-direction: column;
     .content{
-        padding: 30px 150px;
+        padding: 30px 10%;
         width: 100%;
         display: flex;
         flex-direction: column;
