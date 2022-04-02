@@ -24,7 +24,7 @@ const ProductList = ({ type }) => {
                 </li>
             )
         }).slice(0, limit)
-    })
+    }, [limit, productsArray])
 
     return (
         <S.Container>

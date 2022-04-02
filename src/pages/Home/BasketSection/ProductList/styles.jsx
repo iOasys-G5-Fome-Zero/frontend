@@ -8,8 +8,9 @@ const Container = styled.div`
         justify-content: flex-start;    
         width: 50%;
         .pic-container {
-            height: 108px;
-            width: 108px;
+            width: 80%;
+            height: 0;
+            padding-bottom: 80%;
             background-color: lightgray;
         }
     }
