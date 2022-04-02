@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.section`
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
     height: 600px;
     padding: 10px;
     h1 {
@@ -23,7 +23,7 @@ const Container = styled.section`
     .right{
         width: 50%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
     }
     .img-container{
         height: 496px;

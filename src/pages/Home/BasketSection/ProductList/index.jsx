@@ -17,9 +17,9 @@ const ProductList = ({ type }) => {
     const productsArray = products[type]
 
     const productsItems = useMemo(() => {
-        return productsArray.map(product => {
+        return productsArray.map((product, index) => {
             return (
-                <li>
+                <li key={index}>
                     {product}
                 </li>
             )

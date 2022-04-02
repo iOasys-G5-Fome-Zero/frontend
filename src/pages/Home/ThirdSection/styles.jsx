@@ -21,6 +21,8 @@ const Container = styled.section`
     }
     .right{
         width: 50%;
+        display: flex;
+        justify-content: flex-end;
         .img-container{
             height: 100%;
             width: 441px;
