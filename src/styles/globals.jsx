@@ -27,4 +27,10 @@ export default createGlobalStyle`
         color: inherit;
     }
 
+    
+    section{
+        padding: 0% 12%;
+        width: 100%;
+    }
+
 `

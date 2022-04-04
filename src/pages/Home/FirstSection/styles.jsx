@@ -4,7 +4,6 @@ const Container = styled.section`
     display: flex;
     justify-content: space-between;
     height: 600px;
-    padding: 10px;
     background-image: url(${({ bkgSrc }) => bkgSrc});
 
     h1 {

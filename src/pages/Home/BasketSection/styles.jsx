@@ -3,23 +3,17 @@ import styled from "styled-components";
 const Container = styled.section`
     margin-top: 40px;
     display: flex;
+    justify-content: flex-end;
     gap: 70px;
     min-height: 510px;
-    .left-panel {
-        height: 100%;
+    padding: 80px;
+    background: url(${({bkgSrc}) => bkgSrc});
+    background-size: cover; 
+    
+    .basket-content {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        .img-container {
-            position: relative;
-            top: 100px;
-            height: 410px;
-            width: 353px;
-            background-color: lightgray;
-        }
-    }
-    .right-panel {
-        display: flex;
+        width: 60%;
+
         flex-direction: column;
         h1 {
             height: 100px;

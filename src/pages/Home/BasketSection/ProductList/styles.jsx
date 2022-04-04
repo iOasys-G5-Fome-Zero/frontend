@@ -11,7 +11,8 @@ const Container = styled.div`
             width: 80%;
             height: 0;
             padding-bottom: 80%;
-            background-color: lightgray;
+            background-color: #00843F;
+            border-radius: 4px;
         }
     }
     li{

@@ -16,7 +16,6 @@ const Container = styled.section`
         line-height: 28px;
     }
     .topics{
-        /* width: 60%; */
         display: flex;
         flex-direction: column;
         gap: 30px;
