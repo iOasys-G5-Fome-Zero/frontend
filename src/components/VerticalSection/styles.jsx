@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Container = styled.section`
     display: flex;
     flex-direction: column;
+    padding: ${({ narrow }) => narrow ? "0px 18%" : ""};
     margin: 40px 0px;
     align-items: center;
     text-align: center;
@@ -19,13 +20,12 @@ const Container = styled.section`
         display: flex;
         width: 100%;
         padding: 10px;
-        gap: 20px;
+        gap: 80px;
         .image-and-description{
-            flex-grow: 1;
+            flex: 1 1 0px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
         }
         .img-container{
             width: 100%;
@@ -46,6 +46,14 @@ const Container = styled.section`
         .img-description{
             line-height: 30px;
         }
+    }
+    .institutions-description{
+        line-height: 30px;
+        text-align: left;
+        padding: 20px;
+        font-size: 20px;
+        background-color: #C1E9CF;
+        flex-grow: 1;   
     }
 
 `

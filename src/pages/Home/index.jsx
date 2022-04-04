@@ -6,8 +6,7 @@ import FourthSection from "./FourthSection"
 import StoresLinks from "../../components/StoresLinks"
 import BasketSection from "./BasketSection"
 import TestimonySection from "./TestimonySection"
-import { Link } from "react-router-dom"
-import * as S from "./styles"
+import Invite from "../../components/Inivite"
 
 const Home = () => {
     return (
@@ -19,12 +18,7 @@ const Home = () => {
             <StoresLinks />
             <BasketSection />
             <TestimonySection />
-            <S.Invite>
-                <h1>Deseja fazer parte?</h1>
-                <div className="sign-up-link">
-                    <Link to="/cadastro">Cadastre-se</Link>
-                </div>
-            </S.Invite>
+            <Invite title="Deseja fazer parte?" path="/cadastro"/>
         </Layout>
     )
 }

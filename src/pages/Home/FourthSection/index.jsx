@@ -10,7 +10,7 @@ const FourthSection = () => {
         return indexes.map(index => {
             return <Topic index={index}/>
         })
-    })
+    }, [])
 
     return (
         <S.Container>

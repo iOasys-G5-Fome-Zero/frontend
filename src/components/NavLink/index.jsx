@@ -8,8 +8,6 @@ const NavLink = ({ path, label, special, disableHighlight }) => {
 
     const isCurrentPage = location.pathname === path
 
-    console.log(isCurrentPage)
-
     return (
         <Link to={path}>
             <S.NavBarLink highlight={isCurrentPage} special={special} disableHighlight={disableHighlight}>
