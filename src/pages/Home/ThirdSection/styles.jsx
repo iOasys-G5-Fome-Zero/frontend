@@ -5,6 +5,7 @@ const Container = styled.section`
     display: flex;
     margin: 40px 0px;
     gap: 30px;
+    background-color: #C1E9CF;
     .left{
         width: 50%;
         height: 100%;
@@ -26,7 +27,10 @@ const Container = styled.section`
         .img-container{
             height: 100%;
             width: 441px;
-            background-color: lightgray;
+            padding: 50px;
+            img{
+                height: 100%;
+            }
         }
     }
 `

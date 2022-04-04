@@ -5,7 +5,10 @@ const PageLayout = styled.div`
     display: flex;
     flex-direction: column;
     .content{
-        padding: 30px 10%;
+        section{
+            padding: 0% 12%;
+            width: 100%;
+        }
         width: 100%;
         display: flex;
         flex-direction: column;

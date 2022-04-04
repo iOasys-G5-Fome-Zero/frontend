@@ -1,6 +1,10 @@
 import { useMemo } from "react"
 import * as S from "./styles"
 
+import CenouraImg from "../../assets/Cenoura.png"
+import PimentaoImg from "../../assets/Pimentao.png"
+import AbacaxiImg from "../../assets/Abacaxi.png"
+
 const titles = {
     secondSectionHome: "Tenha produtos fresquinhos direto dos produtores familiares",
     fourthSectionHome: "Como funciona?",
@@ -12,7 +16,7 @@ const subtitles = {
 }
 
 const imgSrcs = {
-    secondSectionHome: ["", "", ""],
+    secondSectionHome: [CenouraImg, PimentaoImg, AbacaxiImg],
     fourthSectionHome: ["", "", "", ""],
 }
 
@@ -39,6 +43,7 @@ const VerticalSection = ({ name }) => {
 
     const imgsComponents = useMemo(() => {
         return imgSrcs[name].map((src, index) => {
+            console.log(src)
             return (
                 <div className="image-and-description" key={index}>
                     <div className="img-container">

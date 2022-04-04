@@ -33,6 +33,15 @@ const Container = styled.section`
             height: 0;
             padding-bottom: 75%;
             background-color: lightgray;
+            overflow: hidden;
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                min-height: 100%;
+                min-width: 100%;
+            }
         }
         .img-description{
             line-height: 30px;

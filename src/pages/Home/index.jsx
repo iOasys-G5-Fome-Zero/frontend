@@ -2,6 +2,7 @@ import Layout from "../../components/Layout"
 import FirstSection from "./FirstSection"
 import VerticalSection from "../../components/VerticalSection"
 import ThirdSection from "./ThirdSection"
+import FourthSection from "./FourthSection"
 import StoresLinks from "../../components/StoresLinks"
 import BasketSection from "./BasketSection"
 import TestimonySection from "./TestimonySection"
@@ -14,7 +15,7 @@ const Home = () => {
             <FirstSection />
             <VerticalSection name="secondSectionHome" />
             <ThirdSection />
-            <VerticalSection name="fourthSectionHome" />
+            <FourthSection/>
             <StoresLinks />
             <BasketSection />
             <TestimonySection />

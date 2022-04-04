@@ -5,6 +5,8 @@ const Container = styled.section`
     justify-content: space-between;
     height: 600px;
     padding: 10px;
+    background-image: url(${({ bkgSrc }) => bkgSrc});
+
     h1 {
         line-height: 80px;
         font-size: 55px;
@@ -20,12 +22,12 @@ const Container = styled.section`
         width: 50%;
         align-items: center;
     }
-    .right{
+    .right {
         width: 50%;
         display: flex;
         justify-content: flex-end;
     }
-    .img-container{
+    .img-container {
         height: 496px;
         width: 374px;
         background-color: lightgray;

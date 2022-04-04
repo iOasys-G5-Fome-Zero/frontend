@@ -1,5 +1,6 @@
 
 import * as S from "./styles"
+import ImgSrc from "../../../assets/ThirdPanel.png"
 
 const ThirdSection = () => {
     return (
@@ -13,7 +14,9 @@ const ThirdSection = () => {
                 </div>
             </div>
             <div className="right">
-                <div className="img-container"></div>
+                <div className="img-container">
+                    <img src={ImgSrc} alt="" />
+                </div>
             </div>
         </S.Container>
     )

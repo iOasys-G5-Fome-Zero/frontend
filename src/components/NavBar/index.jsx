@@ -11,7 +11,7 @@ const NavBar = () => {
             </div>
             <div className="auth">
                 <NavLink path="/login" label="Entrar"></NavLink>
-                <NavLink path="/cadastro" label="Cadastre-se" special={true}></NavLink>
+                <NavLink path="/cadastro" label="Cadastre-se" special={true} disableHighlight={true}></NavLink>
             </div>
         </S.NavBar>
     )
