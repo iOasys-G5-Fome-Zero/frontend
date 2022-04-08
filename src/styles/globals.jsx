@@ -27,6 +27,10 @@ export default createGlobalStyle`
         color: inherit;
     }
 
+    h1{
+        font-size: 40px;
+    }
+
     
     section{
         padding: 0% 12%;

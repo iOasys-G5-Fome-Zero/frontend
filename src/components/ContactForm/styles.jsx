@@ -2,16 +2,20 @@ import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     gap: 20px;
+    padding: ${({ ong }) => ong ? "50px 32px" : ""};
+    border: ${({ ong }) => ong ? "1px solid #00843F" : ""};
+    border-radius: 4px;
     .info {
         width: 400px;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        justify-content: space-around;
         p{
             font-size: 24px;
+            line-height: 150%;
         }
     }
     form {

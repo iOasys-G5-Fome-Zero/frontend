@@ -1,12 +1,12 @@
 import Layout from "../../components/Layout";
-import SignUpForm from "./SignUpForm";
-import ContactForm from "./ContactForm";
+import LoginOrSignUpForm from "../../components/LoginOrSignUpForm";
+import ContactForm from "../../components/ContactForm";
 
 const Register = () => {
     return (
         <Layout>
-            <SignUpForm/>
-            <ContactForm/>
+            <LoginOrSignUpForm/>
+            <ContactForm name="cadastro"/>
         </Layout>
     )
 }

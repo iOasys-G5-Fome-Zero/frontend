@@ -5,6 +5,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: 920px;
     padding: 80px;
     background-image: url(${({ bkgSrc }) => bkgSrc});
     form {
@@ -22,6 +23,11 @@ const Container = styled.div`
         }
         p{
             margin-bottom: 24px;
+            a{
+                margin-left: 20px;
+                color: #00843F;
+                text-decoration: underline;
+            }
         }
     }
     .obs{
