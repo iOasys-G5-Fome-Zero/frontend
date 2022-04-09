@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Container = styled.section`
     margin: 50px 0px;
     width: 100%;
+    max-width: 100%;
     display: flex;
     gap: 30px;
     .quotes {
@@ -20,6 +21,10 @@ const Container = styled.section`
     }
     .right-testimonies {
         flex-grow: 1;
+    }
+    
+    @media(max-width: 900px){
+        flex-direction: column;
     }
 `
 

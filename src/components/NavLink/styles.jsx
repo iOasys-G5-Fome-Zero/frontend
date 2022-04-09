@@ -3,6 +3,7 @@ import styled from "styled-components"
 const NavBarLink = styled.div`
     display: flex;
     flex-direction: column;
+    font-weight: ${({ bold }) =>  bold ? "bold" : "normal"};
     color: ${({ special }) => special ? "white" : "#00843F"};
     padding: 12px 12px 5px 12px;
     border-radius: 9999px;

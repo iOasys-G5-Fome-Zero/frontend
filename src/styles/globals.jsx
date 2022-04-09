@@ -29,6 +29,7 @@ export default createGlobalStyle`
 
     h1{
         font-size: 40px;
+        font-weight: 600;
     }
 
     

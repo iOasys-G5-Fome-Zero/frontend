@@ -5,6 +5,9 @@ const Container = styled.section`
     justify-content: space-between;
     height: 600px;
     background-image: url(${({ bkgSrc }) => bkgSrc});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     h1 {
         line-height: 80px;
@@ -30,6 +33,14 @@ const Container = styled.section`
         height: 496px;
         width: 374px;
         background-color: lightgray;
+    }
+    @media(max-width: 900px){
+        flex-direction: column;
+        height: auto;
+        .left{
+            width: auto;
+            gap: 50px;
+        }
     }
 `
 

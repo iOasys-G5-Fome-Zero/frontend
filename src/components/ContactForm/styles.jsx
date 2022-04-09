@@ -13,6 +13,8 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        
+        gap: 60px;
         p{
             font-size: 24px;
             line-height: 150%;
@@ -34,6 +36,14 @@ const Container = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    @media(max-width: 900px){
+        flex-direction: column;
+        .info{
+            align-items: center;
+            width: 90vw;
+            padding: 0px;
+        }
     }
 `
 

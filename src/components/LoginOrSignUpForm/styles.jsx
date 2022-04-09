@@ -9,6 +9,7 @@ const Container = styled.div`
     padding: 80px;
     background-image: url(${({ bkgSrc }) => bkgSrc});
     form {
+        max-width: 95vw;
         padding: 40px 164px;
         background-color: white;
         display: flex;
@@ -43,6 +44,12 @@ const Container = styled.div`
         border-radius: 4px;
         color: white;
         align-self: center; 
+    }
+    @media(max-width: 900px){
+        padding: 40px 20px;
+        form{
+            padding: 30px;
+        }
     }
 `
 

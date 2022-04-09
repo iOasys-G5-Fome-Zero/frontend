@@ -20,6 +20,13 @@ const Container = styled.footer`
         flex-direction: column;
         align-items: flex-start;
     }
+    
+    @media(max-width: 900px){
+        flex-direction: column;
+        nav{
+            flex-direction: column;
+        }
+    }
 `
 
 export { Container }

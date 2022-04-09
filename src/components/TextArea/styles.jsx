@@ -18,6 +18,10 @@ const Container = styled.div`
         font-size: ${({labelUp}) => labelUp ? "12px" : "initial"};
         color: ${({labelUp}) => labelUp ? "#00843F" : "gray"};
     }
+    
+    @media(max-width: 900px){
+        width: 100%;
+    }
 `
 
 export { Container }

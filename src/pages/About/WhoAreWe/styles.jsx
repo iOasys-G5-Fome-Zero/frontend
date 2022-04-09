@@ -30,7 +30,12 @@ const Container = styled.section`
             }
         }
     }
-
+    @media(max-width: 900px){
+        flex-direction: column;
+        .left, .right{
+            width: 100%;
+        }
+    }
 `
 
 export { Container }

@@ -31,6 +31,12 @@ const Container = styled.section`
             width: 485px;
         }
     }
+    
+    @media(max-width: 1000px){
+        .img-container{
+            display: none;
+        }
+    }
 `
 
 export { Container }

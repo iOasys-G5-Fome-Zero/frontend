@@ -19,6 +19,7 @@ const Container = styled.div`
         font-size: 12px;
         margin: 10px 0px;
     }
+    
 `
 
 export { Container }
