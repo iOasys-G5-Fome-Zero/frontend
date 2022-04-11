@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.section`
+    
     margin: 50px 0px;
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    gap: 30px;
+    .desktop{
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        gap: 30px;
+    }
     .quotes {
         margin-top: 150px;
         img{

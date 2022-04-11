@@ -81,7 +81,6 @@ const VerticalSection = ({ name }) => {
 
     const imgsComponents = useMemo(() => {
         return imgSrcs[name].map((src, index) => {
-            console.log(src)
             return (
                 <div className="image-and-description" key={index}>
                     <div className="img-container">
