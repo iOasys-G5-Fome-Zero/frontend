@@ -4,8 +4,8 @@ import { useState } from "react"
 
 const DonationsSection = () => {
 
-    const [donations, setDonations] = useState(100)
-    const [target, setTarget] = useState(150)
+    const [donations] = useState(100)
+    const [target] = useState(150)
 
     return (
         <S.Container donations={donations} barFill={(donations / target) * 100}>
