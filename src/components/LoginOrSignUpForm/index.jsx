@@ -10,7 +10,7 @@ const LoginOrSignUpForm = ({ login }) => {
     return (
         <S.Container bkgSrc={SignUpBackground}>
             <form action="">
-                <h1>{login ? "Login" : "Criar uma conta"}</h1>
+                <h3>{login ? "Login" : "Criar uma conta"}</h3>
 
                 {login ? null : (
                     <Input type="text" label="Nome da Instituição" />

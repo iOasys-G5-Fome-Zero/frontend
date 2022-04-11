@@ -3,27 +3,16 @@ import styled from "styled-components";
 const Container = styled.section`
     display: flex;
     flex-direction: column;
-    padding: ${({ narrow }) => (narrow ? "0px 18%" : "")};
     margin: 40px 0px;
-    align-items: center;
-    text-align: center;
     gap: 32px;
-    h1 {
-        font-size: 39px;
-        line-height: 60px;
-    }
-    .subtitle {
-        font-size: 20px;
-        line-height: 28px;
+    h5 {
+        margin-top: 10px;
     }
     .images {
-        @media (max-width: 900px) {
-            flex-direction: column;
-        }
         display: flex;
         width: 100%;
-        padding: 10px;
-        gap: 80px;
+        padding: ${({ narrow }) => (narrow ? "0px 120px" : "10px")};
+        gap: 20px;
         .image-and-description {
             flex: 1 1 0px;
             display: flex;
@@ -58,8 +47,34 @@ const Container = styled.section`
         background-color: #c1e9cf;
         flex-grow: 1;
     }
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
         padding: 10vw;
+        .images {
+            width: auto;
+            padding: 10px;
+
+            overflow-x: scroll;
+            .image-and-description {
+                flex-shrink: 0;
+                min-width: 100%;
+            }
+        }
+        .indicators-container {
+            display: flex;
+            align-self: center;
+            margin-top: -10px;
+            gap: 10px;
+            .indicator {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #00843F;
+            }
+            .selected{
+                background-color: lime;
+                transform: scale(150%);
+            }
+        }
     }
 `
 

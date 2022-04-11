@@ -16,11 +16,12 @@ const Container = styled.li`
         background-color: #00843F;
         border-radius: 9999px;
     }
-    .content{
-        font-size: 20px;
-    }
     @media(max-width: 500px){
-        flex-direction: column;
+        .number{
+            min-height: 60px;
+            min-width: 60px;
+            font-size: 28px;
+        }
     }
 `
 

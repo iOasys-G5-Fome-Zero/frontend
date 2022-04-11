@@ -13,9 +13,9 @@ const Topic = ({ index }) => {
             <div className="number">
                 {index}
             </div>
-            <div className="content">
+            <h5 className="content">
                 {topicContents[index - 1]}
-            </div>
+            </h5>
         </S.Container>
     )
 }

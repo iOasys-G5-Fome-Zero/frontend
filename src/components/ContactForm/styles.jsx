@@ -24,6 +24,7 @@ const Container = styled.div`
         padding: 0px 40px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
     }
     button{
@@ -39,6 +40,10 @@ const Container = styled.div`
     }
     @media(max-width: 900px){
         flex-direction: column;
+        padding: 20px 8px;
+        h2{
+            font-size: 40px;
+        }
         .info{
             align-items: center;
             width: 90vw;

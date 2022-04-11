@@ -22,33 +22,27 @@ const NavBar = styled.div`
             opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
             z-index: ${({ menuOpen }) => (menuOpen ? "10" : "-10")};
             position: relative;
-            &::before {
-                content: "";
-                position: absolute;
-                right: 7px;
-                top: 0;
-                border: solid transparent;
-                border-width: 0px 5px 10px 5px;
-                border-bottom-color: #ff6b24;
-            }
         }
         .toggle-menu {
+            height: 260px;
+            width: 230px;
             z-index: 10;
             position: absolute;
-            background-color: #f7f7f7;
+            background-color: white;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            border-radius: 15px;
-            border: 3px solid #ff6b24;
+            justify-content: space-around;
+            align-items: center;           
+            box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.12);
+            padding: 20px 0px;
+            border-radius: 8px;
             right: 0;
             bottom: -5px;
             transform: translateY(100%);
             hr {
-                box-shadow: gray 2px 54px 55px;
-                height: 2px;
+                border: 0px;
+                border-top: 1px solid #ff6b24;
                 width: 80%;
-                border-radius: 50%;
             }
         }
     }

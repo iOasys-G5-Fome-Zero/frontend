@@ -15,15 +15,6 @@ const Container = styled.section`
         display: flex;
         width: 60%;
         flex-direction: column;
-        h1 {
-            height: 100px;
-            font-size: 40px;
-            text-justify: center;
-        }
-        .description{
-            font-size: 22px;
-            line-height: 150%;
-        }
         .products-container{
             display: grid;
             margin-top: 40px;
@@ -32,14 +23,19 @@ const Container = styled.section`
         }
     }
     
-    @media(max-width: 650px){
+    @media(max-width: 850px){
         flex-direction: column;
         padding: 30px;
         align-items: center;
         .basket-content{
             width: 85%;
-            h1{
-                height: auto;
+            h2{
+                font-size: 24px;
+                margin-bottom: 28px;
+            }
+            h5{
+                font-size: 16px;
+                line-height: 120%;
             }
             .products-container{
                 display: flex;

@@ -6,12 +6,11 @@ const ThirdSection = () => {
     return (
         <S.Container>
             <div className="left">
-                <h1>
+                <h3>
                 Ajude instituições e ONG’s que atuam no combate a fome
-                </h1>
-                <div className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nibh ante, vestibulum a ligula eu, rutrum imperdiet velit. Vestibulum blandit massa risus, et semper libero mollis sed. Proin tristique posuere maximus. 
-                </div>
+                </h3>
+                <h5 className="description">
+                Doando os alimentos da sua cesta você gera moedas Horticoins que são destinadas a projetos e instituições que atuam no combate à fome.  Conheça mais sobre cada projeto e como você pode fazer a diferença.                </h5>
             </div>
             <div className="right">
                 <div className="img-container">

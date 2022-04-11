@@ -14,12 +14,12 @@ const FourthSection = () => {
 
     return (
         <S.Container>
-            <h1>
+            <h2>
             Como funciona?
-            </h1>
-            <div className="subtitle">
+            </h2>
+            <h5 className="subtitle">
             Aqui no Cestou você faz a diferença! Caso não queira receber todos os alimentos da semana você tem a opção de convertê-los em Horticoins (nossa moeda verde), que é repassada para as ONG’s e instituições que atuam no ccombate à fome.
-            </div>
+            </h5>
             <div className="main-content">
                 <ul className="topics">
                     {topicComponents}

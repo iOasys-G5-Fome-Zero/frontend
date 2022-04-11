@@ -14,10 +14,6 @@ const Container = styled.section`
     }
     .left-testimonies {
         flex-grow: 1;
-        h1 {
-            font-size: 40px;
-            margin-bottom: 30px;
-        }
     }
     .right-testimonies {
         flex-grow: 1;
@@ -25,6 +21,16 @@ const Container = styled.section`
     
     @media(max-width: 900px){
         flex-direction: column;
+        .quotes{
+            display: none;
+        }
+        h2{
+            text-align: center;
+            font-size: 24px;
+        }
+        .right-testimonies{
+            margin-top: -20px;
+        }
     }
 `
 

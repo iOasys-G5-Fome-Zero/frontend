@@ -9,18 +9,15 @@ const TestimonySection = () => {
                 <img src={quoteSrc} alt="quotes" />
             </div>
             <div className="left-testimonies">
-                <h1>
+                <h2>
                     Depoimentos
-                </h1>
-                <h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </h4>
-                <Testimony/>
-                <Testimony/>
+                </h2>
+                <Testimony index={0}/>
+                <Testimony index={1}/>
             </div>
             <div className="right-testimonies">
-                <Testimony right={true}/>
-                <Testimony right={true}/>
+                <Testimony right={true} index={2}/>
+                <Testimony right={true} index={3}/>
             </div>
         </S.Container>
     )

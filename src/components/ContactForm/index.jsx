@@ -5,20 +5,20 @@ import TextArea from "../TextArea"
 const infos = {
     cadastro: (
         <>
-            <h1>Entre em contato conosco!</h1>
-            <p>
+            <h2>Entre em contato conosco!</h2>
+            <h5>
                 Quer saber mais sobre a Cestou, tirar dúvidas ou fazer doações?
                 Utilize o formulário ao lado e nos envie uma mensagem.
-            </p>
-            <p>Responderemos assim que possível.</p>
+            </h5>
+            <h5>Responderemos assim que possível.</h5>
         </>
     ),
     ong: (
         <>
-            <h1>Encontrou algum problema?</h1>
-            <p>
+            <h2>Encontrou algum problema?</h2>
+            <h5>
             Envie-nos uma mensagem e assim que possível iremos te retornar.
-            </p>
+            </h5>
         </>
     ),
 }

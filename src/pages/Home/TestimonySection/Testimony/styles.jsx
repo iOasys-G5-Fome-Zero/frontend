@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const Container = styled.div`
     max-width: 384px;
+    height: 264px;
     display: flex;
+    font-size: 16px;
     margin: 70px 0px;
     padding: 15px;
     box-shadow: 0px 4px 8px -2px rgba(17, 24, 39, 0.1), 0px 2px 4px -2px rgba(17, 24, 39, 0.06);
@@ -12,6 +14,10 @@ const Container = styled.div`
     .testimony{
         justify-content: flex-end;
         display: flex;
+    }
+    .producer-name{
+        margin-top: auto;
+        font-weight: 600;
     }
     .text{
         padding: 15px 10px;
@@ -33,6 +39,10 @@ const Container = styled.div`
     }
     span{
         color: lightgray;
+    }
+
+    @media(max-width: 850px){
+        margin: 20px auto;
     }
 `
 

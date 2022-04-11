@@ -5,21 +5,31 @@ const Container = styled.div`
     gap: 8px;
     .left {
         display: flex;
-        justify-content: flex-start;    
+        justify-content: center;
+        align-items: center;    
         width: 50%;
         .pic-container {
-            width: 80%;
+            width: 60%;
             height: 0;
-            padding-bottom: 80%;
+            padding-bottom: 60%;
             background-color: #00843F;
             border-radius: 4px;
         }
     }
-    li{
-        font-size: 12px;
-        margin: 10px 0px;
+    .product-type{
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
     }
-    
+    li{
+        font-size: 16px;
+    }
+    .expand{
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 20px;
+        color: #00843F;
+    }
 `
 
 export { Container }

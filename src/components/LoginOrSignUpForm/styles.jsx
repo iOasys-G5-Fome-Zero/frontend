@@ -18,7 +18,7 @@ const Container = styled.div`
         *{
             max-width: 400px;
         }
-        h1 {
+        h3 {
             margin-bottom: 38px;
             align-self: center;
         }

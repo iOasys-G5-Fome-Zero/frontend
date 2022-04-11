@@ -6,17 +6,16 @@ const BasketSection = () => {
     return (
         <S.Container bkgSrc={ImgSrc}>
             <div className="basket-content">
-                <h1>
+                <h2>
                 O que vem na sua cesta?
-                </h1>
-                <div className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nibh ante, vestibulum a ligula eu, rutrum imperdiet.
-                </div>
+                </h2>
+                <h5 className="description">
+                Veja abaixo quais os tipos de alimentos que podem vir na sua cesta, a cada semana temos uma variedade diferente de alimentos para compor a sua mesa.                </h5>
                 <div className="products-container">
                 <ProductList type="frutos"/>
                 <ProductList type="verduras"/>
                 <ProductList type="legumes"/>
-                <ProductList type="processados"/>
+                <ProductList type="temperos"/>
                 </div>
             </div>
         </S.Container>

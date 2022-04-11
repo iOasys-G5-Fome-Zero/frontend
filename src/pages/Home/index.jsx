@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout"
 import FirstSection from "./FirstSection"
+import SecondSection from "./SecondSection"
 import VerticalSection from "../../components/VerticalSection"
 import ThirdSection from "./ThirdSection"
 import FourthSection from "./FourthSection"
@@ -12,7 +13,7 @@ const Home = () => {
     return (
         <Layout>
             <FirstSection />
-            <VerticalSection name="secondSectionHome" />
+            <SecondSection/>
             <ThirdSection />
             <FourthSection/>
             <StoresLinks />

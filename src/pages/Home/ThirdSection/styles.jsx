@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.section`
     display: flex;
-    margin: 40px 0px;
     gap: 30px;
     padding-top: 40px;
     padding-bottom: 80px;
@@ -14,12 +13,6 @@ const Container = styled.section`
         flex-direction: column;
         justify-content: space-around;
         gap: 32px;
-        h1 {
-            line-height: 150%;
-        }
-        .description {
-            line-height: 200%;
-        }
     }
     .right {
         width: 50%;
@@ -47,6 +40,13 @@ const Container = styled.section`
                 width: 100%;
                 padding: 0%;
             }
+        }
+        h3{
+            font-size: 24px;
+        }
+        h5{
+            font-size: 16px;
+            line-height: 120%;
         }
     }
 `

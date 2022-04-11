@@ -4,13 +4,6 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     gap: 40px;
-    .regular-text{
-        font-size: 24px;
-    }
-    .bottom-p{
-        padding: 0px 40px;
-        margin-bottom: 96px;
-    }
     .donations {
         padding: 33px;
         padding-bottom: 0;
@@ -28,6 +21,7 @@ const Container = styled.section`
         position: relative;
         overflow: hidden;
         width: 530px;
+        max-width: 80vw;
         height: 29px;
         border-radius: 9999px;
         background-color: #ffd1be;
@@ -46,6 +40,13 @@ const Container = styled.section`
         gap: 32px;
         .ong-data{
             font-size: 32px;
+        }
+    }
+    @media(max-width: 700px){
+        .donations{
+            flex-direction: column;
+            align-items: center;
+            
         }
     }
 `

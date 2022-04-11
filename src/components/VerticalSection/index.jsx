@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import * as S from "./styles"
 import CenouraImg from "../../assets/Cenoura.png"
 import PimentaoImg from "../../assets/Pimentao.png"
@@ -32,36 +32,36 @@ const imgsDescriptions = {
     secondSectionHome: [],
     producers: [
         <>
-            <h3>
+            <h5 className="semibold">
             Emília Nascimento
-            </h3>
-            <p>
+            </h5>
+            <h6>
             Produtora familiar
-            </p>
+            </h6>
         </>,
         <>
-            <h3>
+            <h5 className="semibold">
             Celso Freitas
-            </h3>
-            <p>
+            </h5>
+            <h6>
             Produtor familiar
-            </p>
+            </h6>
         </>,
         <>
-            <h3>
+            <h5 className="semibold">
             Maria Rosa
-            </h3>
-            <p>
+            </h5>
+            <h6>
             Produtora familiar
-            </p>
+            </h6>
         </>,
         <>
-            <h3>
+            <h5 className="semibold">
             José da Silva
-            </h3>
-            <p>
+            </h5>
+            <h6>
             Produtor familiar
-            </p>
+            </h6>
         </>,
     ],
     institutions: [
@@ -74,8 +74,26 @@ const imgsDescriptions = {
     ]
 }
 
+function createIndicators(num, selected) {
+    
+    const result = []
+
+    for (let i = 0; i < num; i++) {
+        console.log(i === selected)
+        result.push((
+            <div className={`${i === selected ? "selected" : ""} indicator`}/>
+        ))
+    }
+
+    return result
+}
+
 
 const VerticalSection = ({ name }) => {
+
+    const [curImage, setCurImg] = useState(0)
+
+    console.log(curImage)
 
     const imgsComponents = useMemo(() => {
         return imgSrcs[name].map((src, index) => {
@@ -91,16 +109,33 @@ const VerticalSection = ({ name }) => {
         })
     }, [name])
 
+    const indicators = useMemo(() => {
+        return createIndicators(imgSrcs[name].length, curImage)
+    }, [curImage, name])
+
+    const handleScroll = (e) => {
+        let numOfImgs = imgSrcs[name].length
+        
+        let maxScrollLeft = e.target.scrollWidth - e.target.clientWidth
+        
+        const { scrollLeft } = e.target
+        
+        let newSelected = Math.trunc((scrollLeft / maxScrollLeft) * numOfImgs)
+
+        if (newSelected === numOfImgs) newSelected--
+        
+        setCurImg(newSelected)
+    }
+
     return (
         <S.Container narrow={name === "institutions"}>
-            <h1>
-                {titles[name]}
-            </h1>
-            <div className="subtitle">
-                {subtitles[name]}
+            <h2>{titles[name]}</h2>
+            <h5 className="subtitle">{subtitles[name]}</h5>
+            <div className="images-wrapper">
+                <div className="images" onScroll={handleScroll}>{imgsComponents}</div>
             </div>
-            <div className="images">
-                {imgsComponents}
+            <div className="indicators-container">
+                {indicators}
             </div>
         </S.Container>
     )

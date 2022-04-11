@@ -3,10 +3,10 @@ import { upperCaseFirstLetter } from "../../../../utils"
 import { useState, useMemo } from "react"
 
 const products = {
-    frutos: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    verduras: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    legumes: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    processados: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
+    frutos: ["500g de maçã", "500g de banana", "250g de uvas", "500g de laranja", "500g de ameixa", "250g de acerola"],
+    verduras: ["1 pé de alface", "1 maço de rúcula", "1 pé de brócolis", "Couve", "Salsinha", "Taioba"],
+    legumes: ["500g de tomate", "400g de abóbora", "400g de cebola", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
+    temperos: ["Salsa", "Alho", "Manjericão", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
 }
 
 
@@ -32,9 +32,9 @@ const ProductList = ({ type }) => {
                 <div className="pic-container"></div>
             </div>
             <div className="right">
-                <h4>
+                <div className="product-type">
                     {upperCaseFirstLetter(type)}
-                </h4>
+                </div>
                 <ul>
                     {productsItems}
                 </ul>

@@ -8,15 +8,6 @@ const Container = styled.section`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    h1 {
-        line-height: 80px;
-        font-size: 55px;
-    }
-    h4 {
-        font-size: 30px;
-        line-height: 40px;
-    }
     .left {
         display: flex;
         flex-direction: column;
@@ -37,9 +28,20 @@ const Container = styled.section`
     @media(max-width: 900px){
         flex-direction: column;
         height: auto;
+        padding-top: 96px;
+        padding-bottom: 20px;
         .left{
-            width: auto;
+            width: 90%;
             gap: 50px;
+        }
+        h1{
+            font-size: 38px;
+        }
+        h5{
+            font-size: 21px;
+        }
+        .stores-container{
+            display: none;
         }
     }
 `

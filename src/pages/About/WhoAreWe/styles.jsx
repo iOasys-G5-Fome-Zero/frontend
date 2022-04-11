@@ -6,12 +6,6 @@ const Container = styled.section`
     gap: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
-    h1{
-        font-size: 45px;
-    }
-    p{
-        font-size: 23px;
-    }
     .right{
         width: 50%;
         display: flex;
@@ -21,6 +15,7 @@ const Container = styled.section`
     .left{
         display: flex;
         flex-direction: column;
+        padding-top: 100px;
         gap: 30px;
         width: 40%;
         .img-container{
@@ -31,7 +26,8 @@ const Container = styled.section`
         }
     }
     @media(max-width: 900px){
-        flex-direction: column;
+        flex-direction: column-reverse;
+        gap: 0px;
         .left, .right{
             width: 100%;
         }

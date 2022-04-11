@@ -5,8 +5,8 @@ const WelcomeSection = () => {
     return (
         <S.Container>
             <div className="left">
-                <h1>Seja bem vinda ONG Criança Sem fome</h1>
-                <p>Estamos felizes que você completou o seu cadastro conosco e foi aprovada para ser uma de nossas instituições beneficiadas.</p>
+                <h2>Seja bem vinda ONG Criança Sem fome</h2>
+                <h5>Estamos felizes que você completou o seu cadastro conosco e foi aprovada para ser uma de nossas instituições beneficiadas.</h5>
             </div>
             <div className="right">
                 <img src={ImgSrc} alt="" />
