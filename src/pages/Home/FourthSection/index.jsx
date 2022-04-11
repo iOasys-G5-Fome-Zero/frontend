@@ -8,7 +8,7 @@ const indexes = [1, 2, 3, 4]
 const FourthSection = () => {
     const topicComponents = useMemo(() => {
         return indexes.map(index => {
-            return <Topic index={index}/>
+            return <Topic index={index} key={index}/>
         })
     }, [])
 

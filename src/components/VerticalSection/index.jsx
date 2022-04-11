@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import * as S from "./styles"
 import CenouraImg from "../../assets/Cenoura.png"
 import PimentaoImg from "../../assets/Pimentao.png"
@@ -9,6 +9,7 @@ import MariaImg from "../../assets/Produtores/Maria.png"
 import JoseImg from "../../assets/Produtores/Jose.png"
 import InstitutionsImg1 from "../../assets/Institutions/InstitutionsImg1.png"
 import InstitutionsImg2 from "../../assets/Institutions/InstitutionsImg2.png"
+import useCarousel from "../../hooks/useCarousel/useCarousel"
 
 const titles = {
     secondSectionHome: "Tenha produtos fresquinhos direto dos produtores familiares",
@@ -74,26 +75,9 @@ const imgsDescriptions = {
     ]
 }
 
-function createIndicators(num, selected) {
-    
-    const result = []
-
-    for (let i = 0; i < num; i++) {
-        console.log(i === selected)
-        result.push((
-            <div className={`${i === selected ? "selected" : ""} indicator`}/>
-        ))
-    }
-
-    return result
-}
-
-
 const VerticalSection = ({ name }) => {
 
-    const [curImage, setCurImg] = useState(0)
-
-    console.log(curImage)
+    const { indicators, handleScroll } = useCarousel(imgSrcs[name].length)
 
     const imgsComponents = useMemo(() => {
         return imgSrcs[name].map((src, index) => {
@@ -108,24 +92,6 @@ const VerticalSection = ({ name }) => {
             )
         })
     }, [name])
-
-    const indicators = useMemo(() => {
-        return createIndicators(imgSrcs[name].length, curImage)
-    }, [curImage, name])
-
-    const handleScroll = (e) => {
-        let numOfImgs = imgSrcs[name].length
-        
-        let maxScrollLeft = e.target.scrollWidth - e.target.clientWidth
-        
-        const { scrollLeft } = e.target
-        
-        let newSelected = Math.trunc((scrollLeft / maxScrollLeft) * numOfImgs)
-
-        if (newSelected === numOfImgs) newSelected--
-        
-        setCurImg(newSelected)
-    }
 
     return (
         <S.Container narrow={name === "institutions"}>

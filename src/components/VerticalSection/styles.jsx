@@ -59,21 +59,12 @@ const Container = styled.section`
                 min-width: 100%;
             }
         }
+        
         .indicators-container {
             display: flex;
             align-self: center;
-            margin-top: -10px;
+            margin-top: 0px;
             gap: 10px;
-            .indicator {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background-color: #00843F;
-            }
-            .selected{
-                background-color: lime;
-                transform: scale(150%);
-            }
         }
     }
 `

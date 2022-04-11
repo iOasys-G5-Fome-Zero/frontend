@@ -18,9 +18,26 @@ const Container = styled.section`
     .right-testimonies {
         flex-grow: 1;
     }
+
+    .mobile{
+        display: none;
+    }
     
     @media(max-width: 900px){
         flex-direction: column;
+        .mobile{
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonies-carousel{
+            width: 100%;
+            display: flex;
+            overflow: scroll;
+        }
+
+        .desktop{
+            display: none;
+        }
         .quotes{
             display: none;
         }
@@ -31,7 +48,13 @@ const Container = styled.section`
         .right-testimonies{
             margin-top: -20px;
         }
+        .indicators-container {
+            display: flex;
+            align-self: center;
+            margin-top: 0px;
+            gap: 10px;
+        }
     }
-`
+    `
 
 export { Container }
