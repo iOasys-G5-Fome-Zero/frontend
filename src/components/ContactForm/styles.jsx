@@ -6,7 +6,7 @@ const Container = styled.div`
     margin-bottom: 100px;
     gap: 20px;
     padding: ${({ ong }) => ong ? "50px 32px" : ""};
-    border: ${({ ong }) => ong ? "1px solid #00843F" : ""};
+    border: ${({ ong, theme }) => ong ? `1px solid ${theme.colors.primary.dark}` : ""};
     border-radius: 4px;
     .info {
         width: 400px;
@@ -27,23 +27,9 @@ const Container = styled.div`
         justify-content: space-between;
         align-items: center;
     }
-    button{
-        width: 200px;
-        height: 50px;
-        background-color: #00843F;
-        border-radius: 4px;
-        color: white;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     @media(max-width: 900px){
         flex-direction: column;
         padding: 20px 8px;
-        h2{
-            font-size: 40px;
-        }
         .info{
             align-items: center;
             width: 90vw;

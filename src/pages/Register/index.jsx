@@ -6,7 +6,7 @@ const Register = () => {
     return (
         <Layout>
             <LoginOrSignUpForm/>
-            <ContactForm name="cadastro"/>
+            <ContactForm page="cadastro"/>
         </Layout>
     )
 }

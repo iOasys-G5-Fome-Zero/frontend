@@ -1,10 +1,10 @@
 import * as S from "./styles"
 import ProductList from "./ProductList"
-import ImgSrc from "../../../assets/BasketSectionImg.png"
+
 
 const BasketSection = () => {
     return (
-        <S.Container bkgSrc={ImgSrc}>
+        <S.Container >
             <div className="basket-content">
                 <h2>
                 O que vem na sua cesta?

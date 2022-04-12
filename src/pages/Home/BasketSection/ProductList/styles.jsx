@@ -12,7 +12,7 @@ const Container = styled.div`
             width: 60%;
             height: 0;
             padding-bottom: 60%;
-            background-color: #00843F;
+            background-color: ${({ theme }) => theme.colors.primary.dark};
             border-radius: 4px;
         }
     }
@@ -28,7 +28,7 @@ const Container = styled.div`
         font-size: 14px;
         font-weight: 600;
         margin-top: 20px;
-        color: #00843F;
+        color: ${({ theme }) => theme.colors.primary.dark};
     }
 `
 

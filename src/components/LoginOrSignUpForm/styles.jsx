@@ -11,7 +11,7 @@ const Container = styled.div`
     form {
         max-width: 95vw;
         padding: 40px 164px;
-        background-color: white;
+        background-color: ${({ theme }) => theme.colors.grayscale.white};
         display: flex;
         flex-direction: column;
         border-radius: 4px;
@@ -26,7 +26,7 @@ const Container = styled.div`
             margin-bottom: 24px;
             a{
                 margin-left: 20px;
-                color: #00843F;
+                color: ${({ theme }) => theme.colors.primary.dark};
                 text-decoration: underline;
             }
         }
@@ -35,7 +35,7 @@ const Container = styled.div`
         margin-top: 24px;
     }
     button{
-        background-color: #00843F;
+        background-color: ${({ theme }) => theme.colors.primary.dark};
         height: 50px;
         width: 200px;
         display: flex;
@@ -44,6 +44,10 @@ const Container = styled.div`
         border-radius: 4px;
         color: white;
         align-self: center; 
+        &:hover{
+            background-color: ${({ theme }) => theme.colors.primary.mediumDark};
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+        }
     }
     @media(max-width: 900px){
         padding: 40px 20px;
@@ -71,14 +75,14 @@ const RadioContainer = styled.div`
         justify-content: center;
         align-items: center;
         &:checked{
-            border-color: #00843F;
+            border-color: ${({ theme }) => theme.colors.primary.medium};
         }
         &::before {
             display: block;
             content: " ";
-            width: 12px;
-            height: 12px;
-            background-color: #00843F;
+            width: 16px;
+            height: 16px;
+            background-color: ${({ theme }) => theme.colors.primary.medium};
             border-radius: 50%;
             transform: scale(0);
             transition: 120ms transform ease-in-out;

@@ -5,7 +5,7 @@ const Container = styled.section`
     gap: 30px;
     padding-top: 40px;
     padding-bottom: 80px;
-    background-color: #c1e9cf;
+    background-color: ${({ theme }) => theme.colors.primary.pale};
     .left {
         width: 50%;
         height: 100%;
@@ -40,13 +40,6 @@ const Container = styled.section`
                 width: 100%;
                 padding: 0%;
             }
-        }
-        h3{
-            font-size: 24px;
-        }
-        h5{
-            font-size: 16px;
-            line-height: 120%;
         }
     }
 `

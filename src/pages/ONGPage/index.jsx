@@ -8,7 +8,7 @@ const ONGPage = () => {
         <Layout>
             <WelcomeSection/>
             <DonationsSection/>
-            <ContactForm name="ong"/>
+            <ContactForm page="ong"/>
         </Layout>
     )
 }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.footer`
     width: 100%;
-    background-color: #00843F;
+    background-color: ${({ theme }) => theme.colors.primary.dark};
     display: flex;
     justify-content: space-between;
     padding: 68px 128px;
@@ -22,7 +22,8 @@ const Container = styled.footer`
     }
     
     @media(max-width: 900px){
-        flex-direction: column;
+        padding: 30px;
+        justify-content: space-between;
         nav{
             flex-direction: column;
         }

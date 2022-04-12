@@ -1,6 +1,10 @@
 import * as S from "./styles"
+import { useState } from "react"
 import Input from "../Input"
 import TextArea from "../TextArea"
+import Button from "../Button"
+import emailjs from "@emailjs/browser"
+
 
 const infos = {
     cadastro: (
@@ -24,20 +28,41 @@ const infos = {
 }
 
 
+const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY
 
-const ContactForm = ({ name }) => {
+
+const ContactForm = ({ page }) => {
+
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("")
+
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+        console.log(name, email)
+        const response = await emailjs.send("contato_service", "form_contato", {
+            name,
+            email,
+            message,
+        }, PUBLIC_KEY)
+
+        console.log(response)
+    }
+
+
     return (
-        <S.Container ong={name === "ong"}>
-            <div className="info">{infos[name]}</div>
-            <form action="">
-                {name === "cadastro" ? (
+        <S.Container ong={page === "ong"}>
+            <div className="info">{infos[page]}</div>
+            <form onSubmit={handleSubmit}>
+                {page === "cadastro" ? (
                     <>
-                        <Input type="text" label="Nome" />
-                        <Input type="text" label="E-mail" />
+                        <Input type="text" label="Nome" bindFunction={setName}/>
+                        <Input type="text" label="E-mail" bindFunction={setEmail}/>
                     </>
                 ) : null}
-                <TextArea label="Escreva sua mensagem" />
-                <button type="submit">Enviar mensagem</button>
+                <TextArea label="Escreva sua mensagem" bindFunction={setMessage}/>
+                <Button type="submit">Enviar mensagem</Button>
             </form>
         </S.Container>
     )

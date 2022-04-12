@@ -12,8 +12,8 @@ const Container = styled.li`
         align-items: center;
         justify-content: center;
         font-weight: 600;
-        color: white;
-        background-color: #00843F;
+        color: ${({ theme }) => theme.colors.grayscale.white};
+        background-color: ${({ theme }) => theme.colors.primary.dark};
         border-radius: 9999px;
     }
     @media(max-width: 500px){

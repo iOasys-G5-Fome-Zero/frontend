@@ -6,7 +6,7 @@ const Invite = styled.div`
     text-align: center;
     padding: 48px 60px;
     border-radius: 4px;
-    border: 1px solid #00843f;
+    border: 1px solid ${({ theme }) => theme.colors.primary.dark};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@ const Invite = styled.div`
     margin-bottom: 80px;
     .sign-up-link {
         padding: 16px 62px;
-        background-color: #00843f;
+        background-color: ${({ theme }) => theme.colors.primary.dark};
         color: white;
         border-radius: 16px;
     }

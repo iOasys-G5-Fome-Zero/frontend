@@ -24,11 +24,11 @@ const Container = styled.section`
         max-width: 80vw;
         height: 29px;
         border-radius: 9999px;
-        background-color: #ffd1be;
+        background-color: ${({ theme }) => theme.colors.secondary.light};
         &::after {
             content: "";
             position: absolute;
-            background-color: #ff8047;
+            background-color: ${({ theme }) => theme.colors.secondary.mediumDark};
             height: 100%;
             width: ${({ barFill }) => barFill}%;
         }
@@ -46,7 +46,7 @@ const Container = styled.section`
         .donations{
             flex-direction: column;
             align-items: center;
-            
+
         }
     }
 `

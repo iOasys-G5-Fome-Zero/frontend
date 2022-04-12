@@ -24,7 +24,6 @@ const Container = styled.section`
             position: relative;
             height: 0;
             padding-bottom: 75%;
-            background-color: lightgray;
             overflow: hidden;
             img {
                 position: absolute;
@@ -44,7 +43,7 @@ const Container = styled.section`
         text-align: left;
         padding: 20px;
         font-size: 20px;
-        background-color: #c1e9cf;
+        background-color: ${({ theme }) => theme.colors.primary.pale};;
         flex-grow: 1;
     }
     @media (max-width: 900px) {

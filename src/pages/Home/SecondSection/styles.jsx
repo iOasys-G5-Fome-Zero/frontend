@@ -33,9 +33,6 @@ const Container = styled.div`
             gap: 20px;
             padding: 30px 0px;
         }
-        h3{
-            font-size: 28px;
-        }
     }
 `
 

@@ -40,17 +40,13 @@ const NavBar = () => {
                     </button>
                     <div className="container">
                         <nav className="toggle-menu">
-                            <NavLink path="/" label="Início" bold={true} />
+                            <NavLink path="/" label="Início" />
                             <hr />
-                            <NavLink path="/sobre" label="Sobre" bold={true} />
+                            <NavLink path="/sobre" label="Sobre" />
                             <hr />
-                            <NavLink
-                                path="/cadastro"
-                                label="Cadastro"
-                                bold={true}
-                            />
+                            <NavLink path="/cadastro" label="Cadastro" />
                             <hr />
-                            <NavLink path="/login" label="Entrar" bold={true} />
+                            <NavLink path="/login" label="Entrar" />
                         </nav>
                     </div>
                 </div>

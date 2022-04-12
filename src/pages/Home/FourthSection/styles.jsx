@@ -34,15 +34,7 @@ const Container = styled.section`
         }
     }
 
-    @media(max-width: 700px){
-        h2{
-            font-size: 24px;
-        }
-        h5{
-            font-size: 16px;
-            line-height: 120%;
-        }
-    }
+    
 `
 
 export { Container }

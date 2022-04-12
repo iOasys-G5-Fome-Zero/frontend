@@ -5,9 +5,6 @@ const Container = styled.section`
     justify-content: space-between;
     padding-top: 120px;
     padding-bottom: 120px;
-    p{
-        font-size: 24px;
-    }
     .left{
         display: flex;
         flex-direction: column;

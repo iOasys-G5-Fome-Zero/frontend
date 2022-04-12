@@ -3,7 +3,7 @@ import styled from "styled-components"
 const NavBar = styled.div`
     display: flex;
     padding: 10px 10%;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: ${({ theme }) => theme.shadows.nav};
     .logo {
         height: 40px;
         width: 128.3px;
@@ -17,7 +17,7 @@ const NavBar = styled.div`
     }
     .toggle {
         position: relative;
-        color: #ff6b24;
+        color: ${({ theme }) => theme.colors.secondary.dark};
         .container {
             opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
             z-index: ${({ menuOpen }) => (menuOpen ? "10" : "-10")};
@@ -28,12 +28,12 @@ const NavBar = styled.div`
             width: 230px;
             z-index: 10;
             position: absolute;
-            background-color: white;
+            background-color: ${({ theme }) => theme.colors.grayscale.white};
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;           
-            box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.12);
+            box-shadow: ${({ theme }) => theme.shadows.toggle};
             padding: 20px 0px;
             border-radius: 8px;
             right: 0;
@@ -41,7 +41,7 @@ const NavBar = styled.div`
             transform: translateY(100%);
             hr {
                 border: 0px;
-                border-top: 1px solid #ff6b24;
+                border-top: 1px solid ${({ theme }) => theme.colors.secondary.dark};
                 width: 80%;
             }
         }

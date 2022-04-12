@@ -1,23 +1,41 @@
 import * as S from "./styles"
 import SignUpBackground from "../../assets/SignUpBackground.png"
 import Input from "../Input"
+import Button from "../Button"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
 const LoginOrSignUpForm = ({ login }) => {
+
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+        
+        const data = {
+            name,
+            email,
+            password,
+        }
+
+        return data
+    }
+    
     const [checkedRadio, setCheckedRadio] = useState("")
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     return (
         <S.Container bkgSrc={SignUpBackground}>
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <h3>{login ? "Login" : "Criar uma conta"}</h3>
 
                 {login ? null : (
-                    <Input type="text" label="Nome da Instituição" />
+                    <Input type="text" label="Nome da Instituição" bindFunction={setName}/>
                 )}
 
-                <Input type="email" label="E-mail" />
-                <Input type="password" label="Senha" />
+                <Input type="email" label="E-mail" bindFunction={setEmail}/>
+                <Input type="password" label="Senha" bindFunction={setPassword}/>
 
                 {login ? (
                     <p>
@@ -69,7 +87,7 @@ const LoginOrSignUpForm = ({ login }) => {
                         </p>
                     </>
                 ) : null}
-                <button type="submit">{login ? "Login" : "Cadastre-se"}</button>
+                <Button type="submit">{login ? "Login" : "Cadastre-se"}</Button>
             </form>
         </S.Container>
     )

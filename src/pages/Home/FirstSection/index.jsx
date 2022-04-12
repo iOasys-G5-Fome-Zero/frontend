@@ -1,10 +1,9 @@
 import StoresLinks from "../../../components/StoresLinks"
 import * as S from "./styles"
-import backgroundImg from "../../../assets/FirstPanel.png"
 
 const FirstSection = () => {
     return (
-        <S.Container bkgSrc={backgroundImg}>
+        <S.Container>
             <div className="left">
                 <h1>Produtos frescos na sua mesa toda semana!</h1>
                 <h5>

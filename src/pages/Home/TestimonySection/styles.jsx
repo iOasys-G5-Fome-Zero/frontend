@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-    
     margin: 50px 0px;
-    .desktop{
+    .desktop {
         width: 100%;
         max-width: 100%;
         display: flex;
@@ -11,7 +10,7 @@ const Container = styled.section`
     }
     .quotes {
         margin-top: 150px;
-        img{
+        img {
             width: 100px;
         }
     }
@@ -22,33 +21,34 @@ const Container = styled.section`
         flex-grow: 1;
     }
 
-    .mobile{
+    .mobile {
         display: none;
     }
-    
-    @media(max-width: 900px){
+
+    @media (max-width: 900px) {
         flex-direction: column;
-        .mobile{
+        .mobile {
             display: flex;
             flex-direction: column;
         }
-        .testimonies-carousel{
+        .testimonies-carousel {
+            padding: 10px;
+            gap: 10px;
             width: 100%;
             display: flex;
             overflow: scroll;
         }
 
-        .desktop{
+        .desktop {
             display: none;
         }
-        .quotes{
+        .quotes {
             display: none;
         }
-        h2{
+        h2 {
             text-align: center;
-            font-size: 24px;
         }
-        .right-testimonies{
+        .right-testimonies {
             margin-top: -20px;
         }
         .indicators-container {
@@ -58,6 +58,6 @@ const Container = styled.section`
             gap: 10px;
         }
     }
-    `
+`
 
 export { Container }

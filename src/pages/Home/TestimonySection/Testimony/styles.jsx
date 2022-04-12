@@ -7,7 +7,7 @@ const Container = styled.div`
     font-size: 16px;
     margin: 70px 0px;
     padding: 15px;
-    box-shadow: 0px 4px 8px -2px rgba(17, 24, 39, 0.1), 0px 2px 4px -2px rgba(17, 24, 39, 0.06);
+    box-shadow: ${({ theme }) => theme.shadows.testimony};
     align-self: ${({ right }) => right ? "flex-start" : "flex-end"};
     margin-left: auto;
     border-radius: 8px;
@@ -16,7 +16,7 @@ const Container = styled.div`
         display: flex;
     }
     .producer-name{
-        margin-top: auto;
+        margin-top: 10px;
         font-weight: 600;
     }
     .text{

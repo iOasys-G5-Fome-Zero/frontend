@@ -3,19 +3,23 @@ import styled from "styled-components"
 const NavBarLink = styled.div`
     display: flex;
     flex-direction: column;
-    font-weight: ${({ bold }) =>  bold ? "bold" : "normal"};
-    color: ${({ special }) => special ? "white" : "#00843F"};
+    font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    color: ${({ special, theme }) =>
+        special ? theme.colors.grayscale.white : theme.colors.primary.dark};
     padding: 12px 12px 5px 12px;
     border-radius: 9999px;
-    background-color: ${({ special }) => special ? "#00843F" : "initial"};
+    background-color: ${({ special, theme }) =>
+        special ? theme.colors.primary.dark : "initial"};
     &:hover {
-        background-color: ${({ disableHighlight }) => disableHighlight ? "" : "#FF6B24"};
+        background-color: ${({ disableHighlight, theme }) =>
+            disableHighlight ? "" : theme.colors.secondary.dark};
     }
-    .highlight{
+    .highlight {
         height: 5px;
         width: 10px;
         border-radius: 9999px;
-        background-color: ${({ highlight, disableHighlight }) => (highlight && !disableHighlight) ? "#FF6B24" : "transparent"};
+        background-color: ${({ highlight, disableHighlight, theme }) =>
+            highlight && !disableHighlight ? theme.colors.secondary.dark : "transparent"};
         margin: auto;
     }
 `

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ImgSrc from "../../../assets/BasketSectionImg.png"
 
 const Container = styled.section`
     margin-top: 40px;
@@ -7,7 +8,7 @@ const Container = styled.section`
     gap: 70px;
     min-height: 510px;
     padding: 80px;
-    background: url(${({bkgSrc}) => bkgSrc});
+    background: url(${ImgSrc});
     background-position: 60% 50%;
     background-size: cover; 
     
@@ -30,12 +31,7 @@ const Container = styled.section`
         .basket-content{
             width: 85%;
             h2{
-                font-size: 24px;
                 margin-bottom: 28px;
-            }
-            h5{
-                font-size: 16px;
-                line-height: 120%;
             }
             .products-container{
                 display: flex;
