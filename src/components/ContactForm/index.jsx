@@ -1,9 +1,13 @@
 import * as S from "./styles"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import Input from "../Input"
 import TextArea from "../TextArea"
 import Button from "../Button"
 import emailjs from "@emailjs/browser"
+import { MoonLoader } from "react-spinners"
+import { ThemeContext } from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 
 
 const infos = {
@@ -36,33 +40,92 @@ const ContactForm = ({ page }) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
+    const [loading, setLoading] = useState(false)
+    const [responseMessage, setResponseMessage] = useState("")
+    const [error, setError] = useState(false)
 
+    const theme = useContext(ThemeContext)
+
+    console.log(theme)
 
     const handleSubmit = async e => {
         e.preventDefault()
         console.log(name, email)
-        const response = await emailjs.send("contato_service", "form_contato", {
-            name,
-            email,
-            message,
-        }, PUBLIC_KEY)
+        setLoading(true)
+        const { status } = await emailjs.send(
+            "contato_service",
+            "form_contato",
+            {
+                name,
+                email,
+                message,
+            },
+            PUBLIC_KEY
+        )
+        setLoading(false)
 
-        console.log(response)
+        if (status === 200) {
+            setResponseMessage("Sua mensagem foi enviada com sucesso!")
+            setError(false)
+        } else {
+            setResponseMessage("Ocorreu um erro ao enviar sua mensagem")
+            setError(true)
+        }
     }
+
+    const loaderStyles = `
+        display: block;
+        margin-top: 30px;
+    `
 
 
     return (
-        <S.Container ong={page === "ong"}>
+        <S.Container ong={page === "ong"} error={error}>
             <div className="info">{infos[page]}</div>
             <form onSubmit={handleSubmit}>
                 {page === "cadastro" ? (
                     <>
-                        <Input type="text" label="Nome" bindFunction={setName}/>
-                        <Input type="text" label="E-mail" bindFunction={setEmail}/>
+                        <Input
+                            type="text"
+                            label="Nome"
+                            bindFunction={setName}
+                        />
+                        <Input
+                            type="text"
+                            label="E-mail"
+                            bindFunction={setEmail}
+                        />
                     </>
                 ) : null}
-                <TextArea label="Escreva sua mensagem" bindFunction={setMessage}/>
+                <TextArea
+                    label="Escreva sua mensagem"
+                    bindFunction={setMessage}
+                />
                 <Button type="submit">Enviar mensagem</Button>
+                <div className="loader-and-message">
+                    {loading ? (
+                        <MoonLoader
+                            color={
+                                loading
+                                    ? theme.colors.primary.dark
+                                    : "transparent"
+                            }
+                            css={loaderStyles}
+                        />
+                    ) : (
+                        <div className="response-message">
+                            {error ? (
+                                <FontAwesomeIcon icon={faCircleXmark} />
+                            ) : (
+                                <FontAwesomeIcon
+                                    icon={faCircleCheck}
+                                    className="icon"
+                                />
+                            )}
+                            {responseMessage}
+                        </div>
+                    )}
+                </div>
             </form>
         </S.Container>
     )

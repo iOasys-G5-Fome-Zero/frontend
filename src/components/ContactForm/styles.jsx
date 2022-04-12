@@ -12,8 +12,6 @@ const Container = styled.div`
         width: 400px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        
         gap: 60px;
         p{
             font-size: 24px;
@@ -26,6 +24,23 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        margin-top: 50px;
+    }
+    .loader-and-message{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .response-message{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        color: ${({ error, theme }) => error ? "red" : theme.colors.primary.dark};
+        .icon {
+            margin-right: 10px;
+            font-size: 24px;
+        } 
     }
     @media(max-width: 900px){
         flex-direction: column;
