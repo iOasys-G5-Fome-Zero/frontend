@@ -114,13 +114,17 @@ const ContactForm = ({ page }) => {
                         />
                     ) : (
                         <div className="response-message">
-                            {error ? (
-                                <FontAwesomeIcon icon={faCircleXmark} />
+                            {responseMessage ? (
+                                error ? (
+                                    <FontAwesomeIcon icon={faCircleXmark} />
+                                ) : (
+                                    <FontAwesomeIcon
+                                        icon={faCircleCheck}
+                                        className="icon"
+                                    />
+                                )
                             ) : (
-                                <FontAwesomeIcon
-                                    icon={faCircleCheck}
-                                    className="icon"
-                                />
+                                ""
                             )}
                             {responseMessage}
                         </div>
