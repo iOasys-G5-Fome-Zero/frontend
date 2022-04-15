@@ -4,7 +4,7 @@ import * as S from "./styles"
 
 const treatPhoneNumber = (data) => {
 
-    let result = data.replace(/[^0-9\-]/g, '')
+    let result = data.replace(/[^0-9-]/g, '')
 
     if (result.length > 0 && result[0] !== "(") 
         result = "(" + result
@@ -38,7 +38,7 @@ const treatInputData = (data, type) => {
     }
 }
 
-const Input = ({ type, label, bindFunction, obs }) => {
+const Input = ({ type, label, bindFunction, obs, invalid, errorMessage }) => {
 
     const [data, setData] = useState("")
     const [focus, setFocus] = useState(false)
@@ -49,7 +49,7 @@ const Input = ({ type, label, bindFunction, obs }) => {
     const labelUp = data || focus
 
     return (
-        <S.Container labelUp={labelUp}>
+        <S.Container labelUp={labelUp} invalid={invalid}>
             <input
                 type={type}
                 name={label}
@@ -59,7 +59,7 @@ const Input = ({ type, label, bindFunction, obs }) => {
                 onBlur={() => setFocus(false)}
             />
             <label htmlFor={label}>{label}</label>
-            <div className="input-obs">{obs}</div>
+            <div className="input-obs">{invalid && errorMessage ? errorMessage : obs}</div>
         </S.Container>
     )
 }

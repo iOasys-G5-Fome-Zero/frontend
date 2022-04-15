@@ -12,19 +12,21 @@ export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState({})
 
-    const logIn = async (data, errorCallback) => {
+    const logIn = async (data, successCallback, errorCallback) => {
         try{
-            const postData = await api.post('/auth/login', data)
-            console.log(postData.data)
+            const { data: postData } = await api.post('/auth/login', data)
+            setUser(postData)
+            successCallback()
         } catch (e){
             errorCallback(e)
         }
     }
 
-    const signUp = async (data, errorCallback) => {
+    const signUp = async (data, successCallback, errorCallback) => {
         try{
-            const postData = await api.post('/users/new-user', data)
-            console.log(postData)
+            const { data: postData } = await api.post("/users/new-user", data)
+            setUser(postData)
+            successCallback()
         } catch (e){
             errorCallback(e)
         }

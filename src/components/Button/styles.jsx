@@ -20,6 +20,8 @@ const StyledButton = styled.button`
     }
     &:disabled{
         background-color: ${({ theme }) => theme.colors.grayscale.medium};
+        pointer-events: none;
+        cursor: default;
         &:hover{
             background-color: ${({ theme }) => theme.colors.grayscale.medium};
         }

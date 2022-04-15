@@ -15,19 +15,23 @@ const LoginForm = () => {
 
     console.log(theme.colors.primary.dark)
 
-    const [email, setEmail] = useState('')
+    const [phoneOrEmail, setPhoneOrEmail] = useState('')
     const [error, setError] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const disableButton = !email || !password
+    const disableButton = !phoneOrEmail || !password
 
     const handleSubmit = async e => {
         e.preventDefault()
         
         setLoading(true)
 
-        await logIn({ email, password }, () => setError("Usuário e/ou senha inválidos"))
+        await logIn(
+            { phoneOrEmail, password },
+            () => setError(""),
+            () => setError("Usuário e/ou senha inválidos")
+        )
 
         setLoading(false)
     }
@@ -36,7 +40,11 @@ const LoginForm = () => {
         <FormShell>
             <form action="" onSubmit={handleSubmit}>
                 <h3>Login</h3>
-                <Input type="email" label="E-mail" bindFunction={setEmail} />
+                <Input
+                    type="email"
+                    label="E-mail ou telefone"
+                    bindFunction={setPhoneOrEmail}
+                />
                 <Input
                     type="password"
                     label="Senha"
@@ -52,7 +60,7 @@ const LoginForm = () => {
                         color={theme.colors.primary.dark}
                         size={loading ? 40 : 0}
                     />
-                </div> 
+                </div>
                 <p className="error">{error}</p>
                 <Button type="submit" disabled={disableButton}>
                     Login
