@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
 const Indicator = styled.div`
+    @media(min-width: 900px){
+        display: none;
+    }
     width: 8px;
     height: 8px;
     border-radius: 50%;

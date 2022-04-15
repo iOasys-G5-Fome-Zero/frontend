@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import bkgSrc from "../../assets/SignUpBackground.png"
+
 const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -7,7 +9,8 @@ const Container = styled.div`
     width: 100%;
     min-height: 920px;
     padding: 80px;
-    background-image: url(${({ bkgSrc }) => bkgSrc});
+    background-image: url(${bkgSrc});
+    background-size: cover;
     form {
         max-width: 95vw;
         padding: 40px 164px;
@@ -49,6 +52,18 @@ const Container = styled.div`
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
         }
     }
+    .error{
+        align-self: center;
+        font-weight: 600;
+        color: red;
+    }
+    .loader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin-bottom: 20px;
+    }
     @media(max-width: 900px){
         padding: 40px 20px;
         form{
@@ -57,41 +72,6 @@ const Container = styled.div`
     }
 `
 
-const RadioContainer = styled.div`
-    display: flex;
-    gap: 20px;
-    margin-bottom: 8px;
-    input {
-        appearance: none;
-        background-color: #fff;
-        margin: 0;
-        font: inherit;
-        color: currentColor;
-        width: 24px;
-        height: 24px;
-        border: 1px solid black;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:checked{
-            border-color: ${({ theme }) => theme.colors.primary.medium};
-        }
-        &::before {
-            display: block;
-            content: " ";
-            width: 16px;
-            height: 16px;
-            background-color: ${({ theme }) => theme.colors.primary.medium};
-            border-radius: 50%;
-            transform: scale(0);
-            transition: 120ms transform ease-in-out;
-            box-shadow: inset 1em 1em var(--form-control-color);
-        }
-        &:checked::before {
-            transform: scale(1);
-        }
-    }
-`
 
-export { Container, RadioContainer }
+
+export { Container }

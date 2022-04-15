@@ -18,6 +18,12 @@ const StyledButton = styled.button`
         background-color: ${({ theme }) => theme.colors.primary.mediumDark};
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
     }
+    &:disabled{
+        background-color: ${({ theme }) => theme.colors.grayscale.medium};
+        &:hover{
+            background-color: ${({ theme }) => theme.colors.grayscale.medium};
+        }
+    }
 `
     
 export default StyledButton

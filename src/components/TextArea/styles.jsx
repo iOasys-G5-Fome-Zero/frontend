@@ -8,14 +8,17 @@ const Container = styled.div`
         height: 176px;
         margin-bottom: 30px;
         padding: 16px 10px;
-        outline-color: ${({ theme }) => theme.colors.primary.dark};
+        outline: none;
         font-size: ${({ theme }) => theme.fontSizes.h6};
     }
     label {
+        background-color: white;
+        padding: 0px 4px;
         position: absolute;
-        left: ${({ labelUp }) => (labelUp ? "0px" : "10px")};
-        top: ${({ labelUp }) => (labelUp ? "-20px" : "16px")};
+        left: ${({ labelUp }) => (labelUp ? "10px" : "10px")};
+        top: ${({ labelUp }) => (labelUp ? "-5px" : "16px")};
         font-size: ${({ labelUp }) => (labelUp ? "12px" : "initial")};
+        font-weight: ${({theme}) => theme.fontWeights.semibold};
         color: ${({ labelUp, theme }) =>
             labelUp
                 ? theme.colors.primary.dark

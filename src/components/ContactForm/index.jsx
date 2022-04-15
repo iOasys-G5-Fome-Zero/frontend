@@ -105,11 +105,8 @@ const ContactForm = ({ page }) => {
                 <div className="loader-and-message">
                     {loading ? (
                         <MoonLoader
-                            color={
-                                loading
-                                    ? theme.colors.primary.dark
-                                    : "transparent"
-                            }
+                            color={theme.colors.primary.dark}
+                            size={loading ? 40 : 0}
                             css={loaderStyles}
                         />
                     ) : (
