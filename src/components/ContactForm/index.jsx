@@ -3,12 +3,13 @@ import { useState, useContext } from "react"
 import Input from "../Input"
 import TextArea from "../TextArea"
 import Button from "../Button"
-import emailjs from "@emailjs/browser"
+import axios from "axios"
 import { MoonLoader } from "react-spinners"
 import { ThemeContext } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 const infos = {
     cadastro: (
@@ -52,25 +53,21 @@ const ContactForm = ({ page }) => {
         e.preventDefault()
         console.log(name, email)
         setLoading(true)
-        const { status } = await emailjs.send(
-            "contato_service",
-            "form_contato",
-            {
+        try{
+            const data = await axios.post("https://formsubmit.co/ajax/ioasysgrupo5@gmail.com", {
                 name,
                 email,
-                message,
-            },
-            PUBLIC_KEY
-        )
-        setLoading(false)
-
-        if (status === 200) {
+                message
+            })
+            console.log(data)
             setResponseMessage("Sua mensagem foi enviada com sucesso!")
             setError(false)
-        } else {
+        }catch(e){
             setResponseMessage("Ocorreu um erro ao enviar sua mensagem")
             setError(true)
         }
+        setLoading(false)
+
     }
 
     const loaderStyles = `
@@ -91,7 +88,7 @@ const ContactForm = ({ page }) => {
                             bindFunction={setName}
                         />
                         <Input
-                            type="text"
+                            type="email"
                             label="E-mail"
                             bindFunction={setEmail}
                         />
