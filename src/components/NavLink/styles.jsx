@@ -7,12 +7,12 @@ const NavBarLink = styled.div`
     color: ${({ special, theme }) =>
         special ? theme.colors.grayscale.white : theme.colors.primary.dark};
     padding: 12px 12px 5px 12px;
-    border-radius: 9999px;
+    border-radius: 4px;
     background-color: ${({ special, theme }) =>
         special ? theme.colors.primary.dark : "initial"};
     &:hover {
         background-color: ${({ disableHighlight, theme }) =>
-            disableHighlight ? "" : theme.colors.secondary.dark};
+            disableHighlight ? "" : theme.colors.secondary.pale};
     }
     .highlight {
         height: 5px;

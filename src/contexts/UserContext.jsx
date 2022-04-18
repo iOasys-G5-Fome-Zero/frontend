@@ -15,6 +15,7 @@ export const UserProvider = ({ children }) => {
     const logIn = async (data, successCallback, errorCallback) => {
         try{
             const { data: postData } = await api.post('/auth/login', data)
+            console.log("LOGADO!")
             setUser(postData)
             successCallback()
         } catch (e){

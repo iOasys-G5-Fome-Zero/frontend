@@ -9,6 +9,9 @@ const Container = styled.section`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    h1{
+        line-height: 120%;
+    }
     .left {
         display: flex;
         flex-direction: column;
