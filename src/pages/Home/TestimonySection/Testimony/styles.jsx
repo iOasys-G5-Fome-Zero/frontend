@@ -11,16 +11,18 @@ const Container = styled.div`
     align-self: ${({ right }) => right ? "flex-start" : "flex-end"};
     margin-left: auto;
     border-radius: 8px;
+    background-color: ${({ theme }) => theme.colors.grayscale.white};
     .testimony{
         justify-content: flex-end;
         display: flex;
     }
     .producer-name{
-        margin-top: 10px;
+        margin-top: auto;
         font-weight: 600;
     }
     .text{
         padding: 15px 10px;
+        height: 100%;
         width: 90%;
         display: flex;
         flex-direction: column;
@@ -41,7 +43,7 @@ const Container = styled.div`
         color: lightgray;
     }
 
-    @media(max-width: 850px){
+    @media(max-width: 920px){
         margin: 20px auto;
         min-width: 100%;
     }

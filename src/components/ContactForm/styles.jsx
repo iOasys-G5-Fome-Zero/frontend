@@ -42,7 +42,7 @@ const Container = styled.div`
             font-size: 24px;
         } 
     }
-    @media(max-width: 900px){
+    @media(max-width: 920px){
         flex-direction: column;
         padding: 20px 8px;
         .info{

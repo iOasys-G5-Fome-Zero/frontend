@@ -1,12 +1,23 @@
 import * as S from "./styles"
 import { upperCaseFirstLetter } from "../../../../utils"
 import { useState, useMemo } from "react"
+import AppleImg from "../../../../assets/Apple.png"
+import CarrotsImg from "../../../../assets/Carrots.png"
+import LettuceImg from "../../../../assets/Lettuce.png"
+import SeasoningImg from "../../../../assets/Seasoning.png"
+
+const imgs = {
+    frutos: AppleImg,
+    verduras: LettuceImg,
+    legumes: CarrotsImg,
+    temperos: SeasoningImg
+}
 
 const products = {
     frutos: ["500g de maçã", "500g de banana", "250g de uvas", "500g de laranja", "500g de ameixa", "250g de acerola"],
     verduras: ["1 pé de alface", "1 maço de rúcula", "1 pé de brócolis", "Couve", "Salsinha", "Taioba"],
-    legumes: ["500g de tomate", "400g de abóbora", "400g de cebola", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    temperos: ["Salsa", "Alho", "Manjericão", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
+    legumes: ["500g de tomate", "400g de abóbora", "400g de cebola", "500g de pimentão", "Lorem ipsum", "Lorem ipsum"],
+    temperos: ["Salsa", "Alho", "Manjericão", "Pimenta", "Açafrão", "Lorem ipsum"],
 }
 
 
@@ -29,18 +40,23 @@ const ProductList = ({ type }) => {
     return (
         <S.Container>
             <div className="left">
-                <div className="pic-container"></div>
+                <div className="pic-container">
+                    <img src={imgs[type]} alt="" />
+                </div>
             </div>
             <div className="right">
-                <div className="product-type">
-                    {upperCaseFirstLetter(type)}
-                </div>
-                <ul>
-                    {productsItems}
-                </ul>
-                <button className="expand" onClick={() => setLimit(limit + 3)} disabled={limit > productsArray.length}>
-                    Ver mais exemplos
-                </button>
+                <div className="product-type">{upperCaseFirstLetter(type)}</div>
+                <ul>{productsItems}</ul>
+                {limit >= productsArray.length ? (
+                    ""
+                ) : (
+                    <button
+                        className="expand"
+                        onClick={() => setLimit(limit + 3)}
+                    >
+                        Ver mais exemplos
+                    </button>
+                )}
             </div>
         </S.Container>
     )

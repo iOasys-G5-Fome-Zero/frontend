@@ -11,7 +11,7 @@ const Invite = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    margin-bottom: 80px;
+    margin: 80px 0px;
     .sign-up-link {
         padding: 16px 62px;
         background-color: ${({ theme }) => theme.colors.primary.dark};

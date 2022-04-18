@@ -4,6 +4,7 @@ import OrangeLogo from "../../assets/Logos/OrangeLogo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
 
@@ -20,12 +21,7 @@ const NavBar = () => {
                 </div>
                 <div className="auth">
                     <NavLink path="/login" label="Entrar" />
-                    <NavLink
-                        path="/cadastro"
-                        label="Cadastre-se"
-                        special={true}
-                        disableHighlight={true}
-                    />
+                    <Link to="/cadastro" className="special-link">Cadastre-se</Link>
                 </div>
             </div>
             <div className="mobile">

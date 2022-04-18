@@ -16,6 +16,7 @@ const Container = styled.section`
         display: flex;
         width: 60%;
         flex-direction: column;
+        gap: 32px;
         .products-container{
             display: grid;
             margin-top: 40px;
@@ -24,15 +25,12 @@ const Container = styled.section`
         }
     }
     
-    @media(max-width: 850px){
+    @media(max-width: 920px){
         flex-direction: column;
-        padding: 30px;
+        padding: 30px 0px;
         align-items: center;
         .basket-content{
             width: 85%;
-            h2{
-                margin-bottom: 28px;
-            }
             .products-container{
                 display: flex;
                 flex-direction: column;

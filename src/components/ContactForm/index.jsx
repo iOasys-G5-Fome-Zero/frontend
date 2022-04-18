@@ -1,15 +1,8 @@
 import * as S from "./styles"
-import { useState, useContext } from "react"
 import Input from "../Input"
 import TextArea from "../TextArea"
 import Button from "../Button"
-import axios from "axios"
-import { MoonLoader } from "react-spinners"
-import { ThemeContext } from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 
-axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 const infos = {
     cadastro: (
@@ -37,93 +30,32 @@ const infos = {
 
 
 const ContactForm = ({ page }) => {
-
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [message, setMessage] = useState("")
-    const [loading, setLoading] = useState(false)
-    const [responseMessage, setResponseMessage] = useState("")
-    const [error, setError] = useState(false)
-
-    const theme = useContext(ThemeContext)
-
-    console.log(theme)
-
-    const handleSubmit = async e => {
-        e.preventDefault()
-        console.log(name, email)
-        setLoading(true)
-        try{
-            const data = await axios.post("https://formsubmit.co/ajax/ioasysgrupo5@gmail.com", {
-                name,
-                email,
-                message
-            })
-            console.log(data)
-            setResponseMessage("Sua mensagem foi enviada com sucesso!")
-            setError(false)
-        }catch(e){
-            setResponseMessage("Ocorreu um erro ao enviar sua mensagem")
-            setError(true)
-        }
-        setLoading(false)
-
-    }
-
-    const loaderStyles = `
-        display: block;
-        margin-top: 30px;
-    `
-
-
     return (
-        <S.Container ong={page === "ong"} error={error}>
+        <S.Container ong={page === "ong"}>
             <div className="info">{infos[page]}</div>
-            <form onSubmit={handleSubmit}>
+            <form  action="https://formsubmit.co/ioasysgrupo5@gmail.com" method="POST" >
+            <input type="hidden" name="_next" value={`${window.location.origin}/obrigado`}/>
+            <input type="hidden" name="_captcha" value="false"/>
                 {page === "cadastro" ? (
                     <>
                         <Input
                             type="text"
                             label="Nome"
-                            bindFunction={setName}
+                            bindFunction={() => false}
                         />
                         <Input
                             type="email"
                             label="E-mail"
-                            bindFunction={setEmail}
+                            bindFunction={() => false}
                         />
                     </>
                 ) : null}
                 <TextArea
                     label="Escreva sua mensagem"
-                    bindFunction={setMessage}
+                    bindFunction={() => false}
                 />
                 <Button type="submit">Enviar mensagem</Button>
-                <div className="loader-and-message">
-                    {loading ? (
-                        <MoonLoader
-                            color={theme.colors.primary.dark}
-                            size={loading ? 40 : 0}
-                            css={loaderStyles}
-                        />
-                    ) : (
-                        <div className="response-message">
-                            {responseMessage ? (
-                                error ? (
-                                    <FontAwesomeIcon icon={faCircleXmark} />
-                                ) : (
-                                    <FontAwesomeIcon
-                                        icon={faCircleCheck}
-                                        className="icon"
-                                    />
-                                )
-                            ) : (
-                                ""
-                            )}
-                            {responseMessage}
-                        </div>
-                    )}
-                </div>
+                    
             </form>
         </S.Container>
     )

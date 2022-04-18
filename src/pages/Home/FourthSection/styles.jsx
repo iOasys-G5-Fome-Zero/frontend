@@ -5,7 +5,6 @@ const Container = styled.section`
     flex-direction: column;
     margin: 40px 0px;
     align-items: center;
-    text-align: center;
     gap: 32px;
     .topics{
         display: flex;
@@ -20,16 +19,17 @@ const Container = styled.section`
         img{
             position: relative;
             left: 20%;
-            width: 485px;
-            max-width: 100%;
+            width: 400px;
         }
     }
     
-    @media(max-width: 1000px){
+    @media(max-width: 1100px){
         .main-content{
             flex-direction: column;
             img{
                 left: 0;
+                margin-top: 30px;
+                max-width: 50vw;
             }
         }
     }

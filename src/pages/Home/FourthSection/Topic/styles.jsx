@@ -4,6 +4,7 @@ const Container = styled.li`
     display: flex;
     align-items: center;
     gap: 30px;
+    text-align: start;
     .number{
         font-size: 39px;
         min-height: 85px;

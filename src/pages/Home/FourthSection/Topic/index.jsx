@@ -3,8 +3,9 @@ import * as S from "./styles"
 const topicContents = [
     "Escolha a frequência que deseja fazer sua assinatura (semanal ou quinzenal)",
     "Escolha o tamanho da sua cesta (pequena, média ou grande)",
-    "Escolha se vai querer todos os alimentos da semana ou se deseja converter parte em doações.",
-    "Receba ou retire sua cesta e escolha para qual instituição deseja doar!"
+    "Selecione itens não desejados na semana para converter em doações ou confirme todos os itens para recebê-los.",
+    "Caso doe algum alimento na semana, escolha para qual ONG ou Instituição deseja doá-lo.",
+    "Combine com o produtor a retirada de sua cesta ou escolha recebê-la em casa e ter uma semana de alimentação saudável!"
 ]
 
 const Topic = ({ index }) => {

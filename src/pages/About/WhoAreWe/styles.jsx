@@ -25,7 +25,7 @@ const Container = styled.section`
             }
         }
     }
-    @media(max-width: 900px){
+    @media(max-width: 920px){
         flex-direction: column-reverse;
         gap: 0px;
         .left, .right{

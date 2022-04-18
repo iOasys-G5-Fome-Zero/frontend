@@ -3,7 +3,21 @@ import styled from "styled-components"
 const NavBar = styled.div`
     display: flex;
     padding: 10px 10%;
+    background-color: ${({ theme }) => theme.colors.grayscale.white};
     box-shadow: ${({ theme }) => theme.shadows.nav};
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    .special-link{
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: ${({ theme }) => theme.colors.primary.dark};
+        color: ${({ theme }) => theme.colors.grayscale.white};
+        font-weight: ${({ theme }) => theme.fontWeights.regular};
+        border-radius: 4px;
+    }
     .logo {
         height: 40px;
         width: 128.3px;

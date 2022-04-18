@@ -46,7 +46,8 @@ const Container = styled.section`
         background-color: ${({ theme }) => theme.colors.primary.pale};;
         flex-grow: 1;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
+        margin: 0;
         padding: 10vw;
         .images {
             width: auto;

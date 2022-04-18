@@ -13,7 +13,7 @@ const Container = styled.section`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 60%;
+        width: 50%;
         align-items: center;
     }
     .right {
@@ -25,14 +25,18 @@ const Container = styled.section`
         height: 496px;
         width: 374px;
     }
-    @media(max-width: 900px){
+    @media(max-width: 920px){
         flex-direction: column;
         height: auto;
         padding-top: 96px;
         padding-bottom: 20px;
         .left{
-            width: 90%;
+            width: 80%;
             gap: 50px;
+            h5{
+                font-size: 21px;
+                line-height: 150%;
+            }
         }
         .stores-container{
             display: none;

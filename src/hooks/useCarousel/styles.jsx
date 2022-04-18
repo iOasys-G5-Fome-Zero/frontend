@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const Indicator = styled.div`
-    @media(min-width: 900px){
+    @media(min-width: 920px){
         display: none;
     }
     width: 8px;

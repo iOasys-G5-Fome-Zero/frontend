@@ -11,7 +11,7 @@ const Container = styled.section`
         gap: 50px;
         width: 45%;
     }
-    @media(max-width: 700px){
+    @media(max-width: 920px){
         flex-direction: column;
         .left{
             width: 100%;

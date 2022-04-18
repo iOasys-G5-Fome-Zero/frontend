@@ -4,6 +4,7 @@ import About from "./pages/About"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import ONGPage from "./pages/ONGPage"
+import ThankYou from "./pages/ThankYou"
 
 const Routes = () => {
     return (
@@ -13,6 +14,7 @@ const Routes = () => {
             <Route path="/cadastro" exact element={<Register/>}/>
             <Route path="/login" exact element={<Login/>}/>
             <Route path="/ong" exact element={<ONGPage/>}/>
+            <Route path="/obrigado" exact element={<ThankYou/>}/>
         </Switch>
     )
 }

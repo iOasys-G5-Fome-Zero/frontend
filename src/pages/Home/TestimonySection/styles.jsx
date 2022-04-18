@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import imgBkg from "../../../assets/TestimoniesBkg.png"
 
 const Container = styled.section`
-    margin: 50px 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url(${imgBkg});
+    background-size: cover;
+    background-position: center;
     .desktop {
         width: 100%;
         max-width: 100%;
@@ -25,7 +30,7 @@ const Container = styled.section`
         display: none;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
         flex-direction: column;
         .mobile {
             display: flex;

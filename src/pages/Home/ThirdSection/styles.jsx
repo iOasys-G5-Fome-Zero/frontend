@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const Container = styled.section`
     display: flex;
-    gap: 30px;
-    padding-top: 40px;
+    gap: 85px;
+    padding-top: 80px;
     padding-bottom: 80px;
     background-color: ${({ theme }) => theme.colors.primary.pale};
     .left {
-        width: 50%;
+        width: 52%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -17,19 +17,22 @@ const Container = styled.section`
     .right {
         width: 50%;
         display: flex;
+        flex-direction: column;
         justify-content: flex-end;
+        padding-top: 110px;
+        gap: 24px;
         .img-container {
             height: 366px;
             width: 441px;
-            padding: 50px;
             img {
                 width: 100%;
             }
         }
     }
     
-    @media(max-width: 900px){
+    @media(max-width: 920px){
         flex-direction: column;
+        gap: 0px;
         .left{
             width: 100%;
         }

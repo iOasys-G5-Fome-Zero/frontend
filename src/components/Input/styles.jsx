@@ -19,7 +19,7 @@ const Container = styled.div`
         }
     }
     label {
-        background-color: white;
+        background-color: ${({ labelUp }) => (labelUp ? "white" : "transparent")};;
         z-index: 0;
         padding: 0px 4px;
         position: absolute;

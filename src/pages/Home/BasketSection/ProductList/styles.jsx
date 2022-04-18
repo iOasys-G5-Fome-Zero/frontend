@@ -12,8 +12,10 @@ const Container = styled.div`
             width: 60%;
             height: 0;
             padding-bottom: 60%;
-            background-color: ${({ theme }) => theme.colors.primary.dark};
             border-radius: 4px;
+            img{
+                width: 100%;
+            }
         }
     }
     .product-type{
