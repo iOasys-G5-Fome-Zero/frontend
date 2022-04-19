@@ -26,6 +26,11 @@ const Container = styled.div`
     }
     li{
         font-size: 16px;
+        max-height: 30px;
+        &.hidden{
+            overflow: hidden;
+            max-height: 0px;
+        }
     }
     .expand{
         font-size: 14px;

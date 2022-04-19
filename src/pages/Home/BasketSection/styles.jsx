@@ -9,7 +9,7 @@ const Container = styled.section`
     min-height: 510px;
     padding: 80px;
     background: url(${ImgSrc});
-    background-position: 60% 50%;
+    background-position: center;
     background-size: cover; 
     
     .basket-content {

@@ -30,11 +30,11 @@ const ProductList = ({ type }) => {
     const productsItems = useMemo(() => {
         return productsArray.map((product, index) => {
             return (
-                <li key={index}>
+                <li key={index} className={index >= limit ? "hidden" : ""}>
                     {product}
                 </li>
             )
-        }).slice(0, limit)
+        })
     }, [limit, productsArray])
 
     return (
