@@ -13,6 +13,7 @@ const Container = styled.div`
             height: 0;
             padding-bottom: 60%;
             border-radius: 4px;
+            box-shadow: ${({ theme }) => theme.shadows.basketIcons};
             img{
                 width: 100%;
             }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ImgSrc from "../../../assets/BasketSectionImg.png"
+import ImgSrc from "../../../assets/BasketSectionBkg.png"
 
 const Container = styled.section`
     margin-top: 40px;

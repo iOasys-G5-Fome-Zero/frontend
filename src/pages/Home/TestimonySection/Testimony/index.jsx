@@ -1,5 +1,4 @@
 import * as S from "./styles"
-import quoteSrc from "../../../../assets/BlackQuotes.svg"
 
 const statements = [
     "Depois que me tornei produtor parceiro da Cestou minhas vendas aumentaram bastante. Agora toda semana sei que terei para quem vender por causa dos assinantes.",
@@ -26,9 +25,6 @@ const Testimony = ({ right, index }) => {
     return (
         <S.Container right={right}>
             <div className="testimony">
-                <div className="small-quotes">
-                    <img src={quoteSrc} alt="" />
-                </div>
                 <div className="text">
                     <div className="opinion">
                         {statements[index]}

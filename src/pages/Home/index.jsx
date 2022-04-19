@@ -6,7 +6,6 @@ import FourthSection from "./FourthSection"
 import StoresLinks from "../../components/StoresLinks"
 import BasketSection from "./BasketSection"
 import TestimonySection from "./TestimonySection"
-import Invite from "../../components/Inivite"
 
 const Home = () => {
     return (
@@ -18,7 +17,6 @@ const Home = () => {
             <StoresLinks />
             <BasketSection />
             <TestimonySection />
-            <Invite title="Deseja fazer parte?" path="/cadastro"/>
         </Layout>
     )
 }

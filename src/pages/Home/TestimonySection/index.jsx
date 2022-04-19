@@ -3,6 +3,7 @@ import quoteSrc from "../../../assets/Quotes.svg"
 import Testimony from "./Testimony"
 import useCarousel from "../../../hooks/useCarousel/useCarousel"
 import { useRef } from "react"
+import Invite from "../../../components/Inivite"
 
 const TestimonySection = () => {
 
@@ -39,6 +40,7 @@ const TestimonySection = () => {
                     {indicators}
                 </div>
             </div>
+            <Invite title="Deseja fazer parte?" path="/cadastro"/>
         </S.Container>
     )
 }

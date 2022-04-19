@@ -30,6 +30,7 @@ const theme = {
         testimony: "0px 4px 8px -2px rgba(17, 24, 39, 0.1), 0px 2px 4px -2px rgba(17, 24, 39, 0.06)",
         toggle: "0px 2px 50px rgba(0, 0, 0, 0.12)",
         nav: "0px 2px 2px rgba(0, 0, 0, 0.12)",
+        basketIcons: "2px 2px 2px rgba(0, 0, 0, 0.12)"
     },
     fontWeights: {
         semibold: "600",

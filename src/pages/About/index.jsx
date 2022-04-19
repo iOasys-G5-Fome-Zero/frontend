@@ -1,14 +1,15 @@
 import Layout from "../../components/Layout";
 import WhoAreWe from "./WhoAreWe";
-import VerticalSection from "../../components/VerticalSection"
+import ProducersSection from "./ProducersSection";
 import Invite from "../../components/Inivite";
+import InstitutionsSection from "./InstitutionsSections";
 
 const About = () => {
     return (
         <Layout>
             <WhoAreWe/>
-            <VerticalSection name="producers"/>
-            <VerticalSection name="institutions"/>
+            <ProducersSection/>
+            <InstitutionsSection/>
             <Invite title="Deseja ser uma instituição beneficiada?" path="/cadastro"/>
         </Layout>
     )

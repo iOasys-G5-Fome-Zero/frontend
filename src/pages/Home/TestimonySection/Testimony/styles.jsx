@@ -26,6 +26,9 @@ const Container = styled.div`
         width: 90%;
         display: flex;
         flex-direction: column;
+        .opinion{
+            font-style: italic;
+        }
     }
     .small-quotes{
         display: flex;
@@ -44,8 +47,9 @@ const Container = styled.div`
     }
 
     @media(max-width: 920px){
-        margin: 20px auto;
+        margin: auto;
         min-width: 100%;
+        
     }
 `
 

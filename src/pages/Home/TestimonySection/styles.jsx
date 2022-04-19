@@ -2,6 +2,9 @@ import styled from "styled-components";
 import imgBkg from "../../../assets/TestimoniesBkg.png"
 
 const Container = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
     background-image: url(${imgBkg});
@@ -33,10 +36,12 @@ const Container = styled.section`
     @media (max-width: 920px) {
         flex-direction: column;
         .mobile {
+            width: 100%;
             display: flex;
             flex-direction: column;
         }
         .testimonies-carousel {
+            margin: 20px auto;
             padding: 10px;
             gap: 10px;
             width: 100%;
