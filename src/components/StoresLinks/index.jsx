@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import AppleStoreLogo from "../../assets/AppleStoreLogo.png"
-import GooglePlayLogo from "../../assets/GooglePlayLogo.png"
+import AppleStoreLogo from "../../assets/AppleStoreEng.png"
+import GooglePlayLogo from "../../assets/GooglePlayEng.png"
 import * as S from "./styles"
 
 const StoresLinks = ({ vertical }) => {

@@ -10,7 +10,7 @@ export const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState()
 
     const logIn = async (data, successCallback, errorCallback) => {
         try{
@@ -33,8 +33,10 @@ export const UserProvider = ({ children }) => {
         }
     }
 
+    const loggedIn = !!user
+
     return (
-        <UserContext.Provider value={{ logIn, user, signUp }}>
+        <UserContext.Provider value={{ logIn, user, signUp, loggedIn }}>
             {children}
         </UserContext.Provider>
     )

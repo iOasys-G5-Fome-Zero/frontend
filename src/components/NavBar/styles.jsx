@@ -33,14 +33,15 @@ const NavBar = styled.div`
         position: relative;
         color: ${({ theme }) => theme.colors.secondary.dark};
         .container {
-            opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
-            z-index: ${({ menuOpen }) => (menuOpen ? "10" : "-10")};
             position: relative;
+            opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
+            z-index: ${({ menuOpen }) => (menuOpen ? "1" : "-10")};
         }
         .toggle-menu {
             height: 260px;
             width: 230px;
-            z-index: 10;
+            z-index: ${({ menuOpen }) => (menuOpen ? "1" : "-10")};
+            pointer-events: ${({ menuOpen }) => menuOpen ? "all" : "none"};
             position: absolute;
             background-color: ${({ theme }) => theme.colors.grayscale.white};
             display: flex;
