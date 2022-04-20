@@ -50,7 +50,10 @@ const Container = styled.section`
         margin: 0;
         padding: 10vw;
         .images {
-            width: auto;
+            position: relative;
+            gap: 40px;
+            left: -9%;
+            width: 95vw;
             padding: 10px;
 
             overflow-x: scroll;

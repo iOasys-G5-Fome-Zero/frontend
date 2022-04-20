@@ -16,7 +16,7 @@ const Invite = styled.div`
         padding: 16px 62px;
         background-color: ${({ theme }) => theme.colors.primary.dark};
         color: white;
-        border-radius: 16px;
+        border-radius: 4px;
     }
     @media(max-width: 700px) {
         h3 {

@@ -1,7 +1,7 @@
 
 import * as S from "./styles"
-import ImgSrc from "../../../assets/ThirdPanel.png"
-import ImgSrc2 from "../../../assets/ThirdSection2.png"
+import ImgSrc from "../../../assets/ThirdSectionHome1.png"
+import ImgSrc2 from "../../../assets/ThirdSectionHome2.png"
 
 const ThirdSection = () => {
     return (
