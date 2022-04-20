@@ -12,10 +12,18 @@ export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState()
 
+    const logInAsOng = (email) => {
+        setUser({
+            email,
+            first_name: "ONG Criança Sem Fome",
+            user_type: "ong"
+        })
+    }
+
     const logIn = async (data, successCallback, errorCallback) => {
         try{
             const { data: postData } = await api.post('/auth/login', data)
-            console.log("LOGADO!")
+            console.log(postData)
             setUser(postData)
             successCallback()
         } catch (e){
@@ -26,6 +34,7 @@ export const UserProvider = ({ children }) => {
     const signUp = async (data, successCallback, errorCallback) => {
         try{
             const { data: postData } = await api.post("/users/new-user", data)
+            console.log(postData)
             setUser(postData)
             successCallback()
         } catch (e){
@@ -33,10 +42,14 @@ export const UserProvider = ({ children }) => {
         }
     }
 
+    const logOut = () => {
+        setUser()
+    }
+
     const loggedIn = !!user
 
     return (
-        <UserContext.Provider value={{ logIn, user, signUp, loggedIn }}>
+        <UserContext.Provider value={{ logIn, user, signUp, loggedIn, logOut, logInAsOng }}>
             {children}
         </UserContext.Provider>
     )

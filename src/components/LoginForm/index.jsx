@@ -6,20 +6,15 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import { MoonLoader } from "react-spinners";
 import { ThemeContext } from "styled-components";
-import LoggedInImg from "../../assets/LoggedInImg.png"
-import * as S from "./styles"
-import StoresLinks from "../StoresLinks";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
 
-    const { logIn, loggedIn } = useContext(UserContext)
+    const { logIn, loggedIn, user, logInAsOng } = useContext(UserContext)
 
     const navigate = useNavigate()
 
     const theme = useContext(ThemeContext)
-
-    console.log(theme.colors.primary.dark)
 
     const [phoneOrEmail, setPhoneOrEmail] = useState('')
     const [error, setError] = useState('')
@@ -28,11 +23,15 @@ const LoginForm = () => {
 
     const disableButton = !phoneOrEmail || !password
 
+    if(loggedIn){
+        navigate(`/${user.user_type}`)
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         if(phoneOrEmail === "criancasemfome@ong.com.br"){
-            navigate("/ong")
+            logInAsOng("criancasemfome@ong.com.br") 
             return
         }
 
@@ -73,23 +72,23 @@ const LoginForm = () => {
         </form>
     )
 
-    const messageComponent = (
-        <S.Message>
-            <h3>Seja bem-vindo!</h3>
-            <h6>
-                No momento ainda estamos trabalhando para tornar sua experiência
-                completa pelo site, mas por enquanto tenha acesso a todas as
-                nossas funcionalidades baixando o aplicativo Cestou.
-            </h6>
-            <img src={LoggedInImg} alt="" />    
-            <StoresLinks/>
-        </S.Message>
-    )
+    // const messageComponent = (
+    //     <S.Message>
+    //         <h3>Seja bem-vindo!</h3>
+    //         <h6>
+    //             No momento ainda estamos trabalhando para tornar sua experiência
+    //             completa pelo site, mas por enquanto tenha acesso a todas as
+    //             nossas funcionalidades baixando o aplicativo Cestou.
+    //         </h6>
+    //         <img src={LoggedInImg} alt="" />    
+    //         <StoresLinks/>
+    //     </S.Message>
+    // )
 
     return (
         <FormShell>
             {
-                loggedIn ? messageComponent : formComponent
+                formComponent
             }
         </FormShell>
     )

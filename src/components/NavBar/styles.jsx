@@ -8,7 +8,12 @@ const NavBar = styled.div`
     position: sticky;
     top: 0;
     z-index: 20;
-    .special-link{
+    hr {
+        border: 0px;
+        border-top: 1px solid ${({ theme }) => theme.colors.secondary.dark};
+        width: 80%;
+    }
+    .special-link {
         display: flex;
         align-items: center;
         padding: 10px 20px;
@@ -17,6 +22,8 @@ const NavBar = styled.div`
         color: ${({ theme }) => theme.colors.grayscale.white};
         font-weight: ${({ theme }) => theme.fontWeights.regular};
         border-radius: 4px;
+    }
+    .user-menu {
     }
     .logo {
         height: 40px;
@@ -30,36 +37,6 @@ const NavBar = styled.div`
         display: none;
     }
     .toggle {
-        position: relative;
-        color: ${({ theme }) => theme.colors.secondary.dark};
-        .container {
-            position: relative;
-            opacity: ${({ menuOpen }) => (menuOpen ? "1" : "0")};
-            z-index: ${({ menuOpen }) => (menuOpen ? "1" : "-10")};
-        }
-        .toggle-menu {
-            height: 260px;
-            width: 230px;
-            z-index: ${({ menuOpen }) => (menuOpen ? "1" : "-10")};
-            pointer-events: ${({ menuOpen }) => menuOpen ? "all" : "none"};
-            position: absolute;
-            background-color: ${({ theme }) => theme.colors.grayscale.white};
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;           
-            box-shadow: ${({ theme }) => theme.shadows.toggle};
-            padding: 20px 0px;
-            border-radius: 8px;
-            right: 0;
-            bottom: -5px;
-            transform: translateY(100%);
-            hr {
-                border: 0px;
-                border-top: 1px solid ${({ theme }) => theme.colors.secondary.dark};
-                width: 80%;
-            }
-        }
     }
     .pages {
         display: flex;
@@ -93,4 +70,82 @@ const NavBar = styled.div`
     }
 `
 
-export { NavBar }
+const UserMenu = styled.nav`
+    color: ${({ theme }) => theme.colors.primary.dark};
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    button {
+        font-size: 16px;
+    }
+    .log-out {
+        padding: 8px 0px;
+        font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    }
+    .options {
+        height: 130px;
+        width: 130px;
+        z-index: ${({ userMenuOpen }) => (userMenuOpen ? "1" : "0")};
+        opacity: ${({ userMenuOpen }) => (userMenuOpen ? "1" : "0")};
+        pointer-events: ${({ userMenuOpen }) =>
+            userMenuOpen ? "all" : "none"};
+        position: absolute;
+        background-color: ${({ theme }) => theme.colors.grayscale.white};
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: ${({ theme }) => theme.shadows.toggle};
+        padding: 20px 0px;
+        border-radius: 8px;
+        right: 0;
+        bottom: -5px;
+        transform: translate(-100%, 100%);
+        gap: 10px;
+    }
+    .icon {
+        margin-left: 10px;
+        transform: rotate(
+            ${({ userMenuOpen }) => (userMenuOpen ? "180deg" : "0deg")}
+        );
+    }
+`
+
+const Toggle = styled.div`
+    position: relative;
+    color: ${({ theme }) => theme.colors.secondary.dark};
+    .container {
+        position: relative;
+        opacity: ${({ toggleOpen }) => (toggleOpen ? "1" : "0")};
+        z-index: ${({ toggleOpen }) => (toggleOpen ? "1" : "-10")};
+    }
+    .toggle-menu {
+        height: 260px;
+        width: 230px;
+        z-index: ${({ toggleOpen }) => (toggleOpen ? "1" : "-10")};
+        pointer-events: ${({ toggleOpen }) => (toggleOpen ? "all" : "none")};
+        position: absolute;
+        background-color: ${({ theme }) => theme.colors.grayscale.white};
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: ${({ theme }) => theme.shadows.toggle};
+        padding: 20px 0px;
+        border-radius: 8px;
+        right: 0;
+        bottom: -5px;
+        transform: translateY(100%);
+    }
+    button {
+        font-size: 16px;
+    }
+    .log-out {
+        padding: 8px 0px;
+        color: ${({ theme }) => theme.colors.primary.dark};
+        font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    }
+`
+
+export { NavBar, UserMenu, Toggle }

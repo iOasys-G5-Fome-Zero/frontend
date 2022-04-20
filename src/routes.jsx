@@ -4,6 +4,8 @@ import About from "./pages/About"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import ONGPage from "./pages/ONGPage"
+import ProducerPage from "./pages/ProducerPage"
+import ConsumerPage from "./pages/ConsumerPage"
 import ThankYou from "./pages/ThankYou"
 
 const Routes = () => {
@@ -15,6 +17,8 @@ const Routes = () => {
             <Route path="/login" exact element={<Login/>}/>
             <Route path="/ong" exact element={<ONGPage/>}/>
             <Route path="/obrigado" exact element={<ThankYou/>}/>
+            <Route path="/producer" exact element={<ProducerPage/>}/>
+            <Route path="/consumer" exact element={<ConsumerPage/>}/>
         </Switch>
     )
 }

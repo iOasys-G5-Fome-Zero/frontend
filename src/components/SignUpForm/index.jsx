@@ -5,25 +5,28 @@ import Button from "../Button";
 import Input from "../Input";
 import { useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MoonLoader } from "react-spinners";
 import { ThemeContext } from "styled-components";
-import signedUpImg from "../../assets/SuccessfulSignUp.png"
 
 
 function splitName(name){
     const index = name.indexOf(' ')
+    if(index < 0)
+        return [name, "Nenhum"]
     return [name.slice(0, index), name.slice(index + 1)]
 }
 
 const emailRegex = /.{1,}@{1}.{1,}\..{1,}/
 
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/
+// const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/
 
 
 const SignUpForm = () => {
     
-    const { signUp } = useContext(UserContext)
+    const { signUp, loggedIn } = useContext(UserContext)
+
+    const navigate = useNavigate()
 
     const theme = useContext(ThemeContext)
     
@@ -34,8 +37,10 @@ const SignUpForm = () => {
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
-    const [registered, setRegistered] = useState(false)
     const [invalidInputs, setInvalidInputs] = useState([])
+
+    if(loggedIn)
+        navigate("/obrigado")
 
     const disableButton = !(checkedRadio && name && email && phone && password)
 
@@ -55,7 +60,7 @@ const SignUpForm = () => {
             incorrectInputs.push(1)
             result = false
         }
-        if(!passwordRegex.test(password)){
+        if(!(password.length >= 6)){
             incorrectInputs.push(2)
             result = false
         }
@@ -72,11 +77,12 @@ const SignUpForm = () => {
         if (checkedRadio === "institution") return
 
         const [firstName, lastName] = splitName(name)
-
         
-        if(!validateInputs())
+        if(!validateInputs()){
+            setError("Preencha todos os campos corretamente para completar seu cadastro")
             return
-        
+        }
+
         setLoading(true)
 
         await signUp(
@@ -88,11 +94,8 @@ const SignUpForm = () => {
                 password,
                 email,
             },
-            () => {
-            setError("")
-            setRegistered(true)
-        },
-            () => setError("Não foi possível criar a sua conta")
+            () => setError(""),
+            () => setError("Endereço de e-mail ou número de telefone já em uso")
         )
 
         setLoading(false)
@@ -109,7 +112,7 @@ const SignUpForm = () => {
             <Input
                 type="tel"
                 label="Telefone de contato"
-                bindFunction={(s) => setPhone(s.replace(/\D/g, ""))}
+                bindFunction={(s) => setPhone(s.replace(/\D/g, ""))} // converting phone number from (XX)XXXX-XXXX format to XXXXXXXXXX
                 invalid={invalidInputs.includes(0)}
                 errorMessage="Favor inserir número de telefone válido"
             />
@@ -124,7 +127,7 @@ const SignUpForm = () => {
                 type="password"
                 label="Senha"
                 bindFunction={setPassword}
-                obs="Sua senha deve ter entre 8 e 50 caracteres e deve conter pelo menos uma letra maiúscula e um caractere especial"
+                obs="Sua senha deve ter entre 6 e 50 caracteres"
                 invalid={invalidInputs.includes(2)}
             />
             <p>
@@ -178,20 +181,20 @@ const SignUpForm = () => {
     )
 
 
-    const registeredMessage = (
-        <S.Message>
-            <h3>Cadastro realizado com sucesso!</h3>
-            <h6>
-                Você receberá uma confirmação por e-mail e também solicitaremos
-                mais alguns dados para validar seu cadastro caso seja uma
-                instituição ou ONG que atua no combate a fome.
-            </h6>
-            <img src={signedUpImg} alt="" />
-        </S.Message>
-    )
+    // const registeredMessage = (
+    //     <S.Message>
+    //         <h3>Cadastro realizado com sucesso!</h3>
+    //         <h6>
+    //             Você receberá uma confirmação por e-mail e também solicitaremos
+    //             mais alguns dados para validar seu cadastro caso seja uma
+    //             instituição ou ONG que atua no combate a fome.
+    //         </h6>
+    //         <img src={signedUpImg} alt="" />
+    //     </S.Message>
+    // )
 
     return (
-        <FormShell>{registered ? registeredMessage : formComponent}</FormShell>
+        <FormShell>{formComponent}</FormShell>
     )
 }
 
