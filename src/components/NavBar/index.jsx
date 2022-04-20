@@ -89,7 +89,7 @@ const NavBar = () => {
                                         label="Cadastro"
                                     />
                                     <hr />
-                                    <NavLink path="/login" label="Entrar" />)
+                                    <NavLink path="/login" label="Entrar" />
                                 </>
                             )}
                         </nav>
