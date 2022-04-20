@@ -20,12 +20,14 @@ export const UserProvider = ({ children }) => {
         })
     }
 
-    const logIn = async (data, successCallback, errorCallback) => {
+    const logIn = async (data, successCallback, errorCallback, keepLogged) => {
         try{
             const { data: postData } = await api.post('/auth/login', data)
             console.log(postData)
             setUser(postData)
             successCallback()
+            if(keepLogged)
+                localStorage.setItem("user", postData)
         } catch (e){
             errorCallback(e)
         }
@@ -43,6 +45,7 @@ export const UserProvider = ({ children }) => {
     }
 
     const logOut = () => {
+        localStorage.setItem("user", {})
         setUser()
     }
 

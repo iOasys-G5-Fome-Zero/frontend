@@ -18,26 +18,26 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         border-radius: 4px;
-        *{
+        * {
             max-width: 400px;
         }
         h3 {
             margin-bottom: 38px;
             align-self: center;
         }
-        p{
+        p {
             margin-bottom: 24px;
-            a{
+            a {
                 margin-left: 20px;
                 color: ${({ theme }) => theme.colors.primary.dark};
                 text-decoration: underline;
             }
         }
     }
-    .obs{
+    .obs {
         margin-top: 24px;
     }
-    button{
+    button {
         background-color: ${({ theme }) => theme.colors.primary.dark};
         height: 50px;
         width: 200px;
@@ -46,27 +46,29 @@ const Container = styled.div`
         align-items: center;
         border-radius: 4px;
         color: white;
-        align-self: center; 
-        &:hover{
+        align-self: center;
+        &:hover {
             background-color: ${({ theme }) => theme.colors.primary.mediumDark};
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
         }
     }
-    .error{
+    .error {
         align-self: center;
         font-weight: 600;
         color: red;
     }
-    .loader{
+    .loader {
         display: flex;
         justify-content: center;
         align-items: center;
         align-self: center;
         margin-bottom: 20px;
     }
-    @media(max-width: 900px){
+    .keep-logged {
+    }
+    @media (max-width: 900px) {
         padding: 40px 20px;
-        form{
+        form {
             padding: 30px;
         }
     }
