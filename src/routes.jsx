@@ -7,6 +7,7 @@ import ONGPage from "./pages/ONGPage"
 import ProducerPage from "./pages/ProducerPage"
 import ConsumerPage from "./pages/ConsumerPage"
 import ThankYou from "./pages/ThankYou"
+import PageNotFound from "./pages/PageNotFound"
 
 const Routes = () => {
     return (
@@ -19,6 +20,7 @@ const Routes = () => {
             <Route path="/obrigado" exact element={<ThankYou/>}/>
             <Route path="/producer" exact element={<ProducerPage/>}/>
             <Route path="/consumer" exact element={<ConsumerPage/>}/>
+            <Route path="*" element={<PageNotFound/>}/>
         </Switch>
     )
 }
