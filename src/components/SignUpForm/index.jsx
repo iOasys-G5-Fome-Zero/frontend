@@ -3,7 +3,7 @@ import FormShell from "../FormShell";
 import * as S from "./styles";
 import Button from "../Button";
 import Input from "../Input";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import { MoonLoader } from "react-spinners";
@@ -39,8 +39,9 @@ const SignUpForm = () => {
     const [loading, setLoading] = useState(false)
     const [invalidInputs, setInvalidInputs] = useState([])
 
-    if(loggedIn)
-        navigate("/obrigado")
+    useEffect(() => {
+        if (loggedIn) navigate("/obrigado")
+    })
 
     const disableButton = !(checkedRadio && name && email && phone && password)
 
@@ -106,7 +107,7 @@ const SignUpForm = () => {
             <h3>Criar conta</h3>
             <Input
                 type="text"
-                label="Nome da Instituição"
+                label="Nome ou Instituição"
                 bindFunction={setName}
             />
             <Input

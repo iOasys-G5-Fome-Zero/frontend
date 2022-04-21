@@ -1,8 +1,6 @@
 import * as S from "./styles"
 
 const FormShell = ({ children }) => {
-
-
     return (
         <S.Container>
             {children}
