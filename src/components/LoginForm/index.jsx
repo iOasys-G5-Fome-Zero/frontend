@@ -34,7 +34,7 @@ const LoginForm = () => {
         e.preventDefault()
 
         if (phoneOrEmail === "criancasemfome@ong.com.br") {
-            logInAsOng("criancasemfome@ong.com.br")
+            logInAsOng("criancasemfome@ong.com.br", keepLogged)
             return
         }
 

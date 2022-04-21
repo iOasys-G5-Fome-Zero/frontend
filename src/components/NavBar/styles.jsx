@@ -78,6 +78,7 @@ const UserMenu = styled.nav`
     align-items: center;
     button {
         font-size: 16px;
+        font-weight: ${({ theme }) => theme.fontWeights.semibold};
     }
     .log-out {
         padding: 8px 0px;

@@ -10,14 +10,19 @@ export const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState()
+    const userJSON = localStorage.getItem("user")
 
-    const logInAsOng = (email) => {
-        setUser({
+    const [user, setUser] = useState(userJSON ? JSON.parse(userJSON) : null)
+
+    const logInAsOng = (email, keepLogged) => {
+        const newUser = {
             email,
             first_name: "ONG Criança Sem Fome",
             user_type: "ong"
-        })
+        }
+        setUser(newUser)
+        if(keepLogged)
+            localStorage.setItem("user", JSON.stringify(newUser))
     }
 
     const logIn = async (data, successCallback, errorCallback, keepLogged) => {
@@ -27,7 +32,7 @@ export const UserProvider = ({ children }) => {
             setUser(postData)
             successCallback()
             if(keepLogged)
-                localStorage.setItem("user", postData)
+                localStorage.setItem("user", JSON.stringify(postData))
         } catch (e){
             errorCallback(e)
         }
@@ -45,7 +50,7 @@ export const UserProvider = ({ children }) => {
     }
 
     const logOut = () => {
-        localStorage.setItem("user", {})
+        localStorage.setItem("user", "")
         setUser()
     }
 

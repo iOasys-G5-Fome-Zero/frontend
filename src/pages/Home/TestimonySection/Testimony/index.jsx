@@ -11,7 +11,7 @@ const names = [
     "Celso Freitas",
     "Emília Nescimento",
     "Márcia de Freitas",
-    "Nome do cliente"
+    "Ernesto Campos"
 ]
 
 const occupations = [

@@ -15,8 +15,8 @@ const NavBarLink = styled.div`
             disableHighlight ? "" : theme.colors.secondary.pale};
     }
     .highlight {
-        height: 5px;
-        width: 10px;
+        height: 4px;
+        width: 12px;
         border-radius: 9999px;
         background-color: ${({ highlight, disableHighlight, theme }) =>
             highlight && !disableHighlight ? theme.colors.secondary.dark : "transparent"};
