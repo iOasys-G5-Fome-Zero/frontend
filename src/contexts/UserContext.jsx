@@ -42,8 +42,8 @@ export const UserProvider = ({ children }) => {
         try{
             const { data: postData } = await api.post("/users/new-user", data)
             console.log(postData)
-            setUser(postData)
             successCallback()
+            setUser(postData)
         } catch (e){
             errorCallback(e)
         }

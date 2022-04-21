@@ -24,7 +24,7 @@ const emailRegex = /.{1,}@{1}.{1,}\..{1,}/
 
 const SignUpForm = () => {
     
-    const { signUp, loggedIn } = useContext(UserContext)
+    const { signUp, loggedIn, user } = useContext(UserContext)
 
     const navigate = useNavigate()
 
@@ -38,13 +38,15 @@ const SignUpForm = () => {
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const [invalidInputs, setInvalidInputs] = useState([])
-
-    useEffect(() => {
-        if (loggedIn) navigate("/obrigado")
-    })
-
+    
     const disableButton = !(checkedRadio && name && email && phone && password)
 
+    useEffect(() => {
+        if (loggedIn) {
+            navigate(`/${user.user_type || user.userType}`)
+        }
+    })
+    
     const validateInputs = () => {
 
         let result = true
@@ -95,7 +97,9 @@ const SignUpForm = () => {
                 password,
                 email,
             },
-            () => setError(""),
+            () => {
+                navigate("/obrigado")
+            },
             () => setError("Endereço de e-mail ou número de telefone já em uso")
         )
 

@@ -27,7 +27,7 @@ const LoginForm = () => {
     const disableButton = !phoneOrEmail || !password
 
     if (loggedIn) {
-        navigate(`/${user.user_type}`)
+        navigate(`/${user.user_type || user.userType}`)
     }
 
     const handleSubmit = async (e) => {
