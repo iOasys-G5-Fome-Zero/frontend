@@ -17,7 +17,7 @@ const BasketSection = () => {
                     alimentos para compor a sua mesa.{" "}
                 </h5>
                 <div className="products-container">
-                    <ProductList type="frutos" />
+                    <ProductList type="frutas" />
                     <ProductList type="verduras" />
                     <ProductList type="legumes" />
                     <ProductList type="temperos" />
