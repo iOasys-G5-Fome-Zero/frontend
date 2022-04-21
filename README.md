@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Cestou Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The front-end web application code of Cestou.
 
-## Available Scripts
+A build of this project is live and can be found [here](https://cestou.netlify.app/).
 
-In the project directory, you can run:
+## Installation and Setup Instructions
 
-### `npm start`
+#### Example:  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone down this repository. You will need `node` and either `npm` or `yarn` installed globally on your machine.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installation:
 
-### `npm test`
+`npm install` or `yarn install`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To Start Server:
 
-### `npm run build`
+`npm start` or `yarn start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To Visit App:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Access [localhost:3000](localhost:3000) on your web browser of preference.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Reflection:
 
-### `npm run eject`
+This project was built for [Ioasys Camp 2022](https://camp.ioasys.com.br/) as part of the final challenge of the bootcamp, that was to be done in a team. Because of that, there were certain requirements to be met in this project, even though most requierments were set by the team itself, such as: 
+ 
+- Following the layout designed by our team's designer
+- A landing page, displaying basic information about the product and relevant links.
+- An "About" page, informing what the product (Cestou) consists of .
+- A "Sign Up" page where the user can register as a consumer, producer or auxiliary institution (such as NGOs) of familial agricultural products.
+- A "Login" page where users can authenticate themselves 
+- A dashboard page for the institutions that partner up with Cestou can access (this page is still static unfortunately, because the backend still doesn't support the registration of these institutions).
+- A contact form that allows users to e-mail Cestou's team directly from the web page.
+- The project had to be done by 22/04/2022, giving the development team about 3 weeks and a half to write the code.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Because of these requirements, there weren't many decisions to be made about the project by the front-end developer, but there were some important ones, such as what state management tool to use and how to handle API requests. I chose to use React's `Context API` for state management, because the only global state that needed to be managed was related to authentication, which tends not change much and was very simple to implement using Context (I had some experience using Context to mange authentication), a more sophisticated tool like Redux didn't feel necessary.  I chose `axios` to handle my API requests because I have some experience with it and I think `axios` helps keep the code more organized by instantiating objects to represent the APIs you might access.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+One of the main challenges I ran into was Responsiveness. Because of the predetermined design, it was challenging to make the layout responsive as the mobile design of the website was quite different from the desktop design in many aspects. Specifically, the design team requested that some sections of the page that displayed a series of elements horizontally be sustituted by carousels in the mobile design. These carousels were implemented from scratch.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Another issue was finding a way of sending the e-mails from the contact forms. After using [EmailJS](https://www.emailjs.com/) (which is very good, but has a 200 e-mail per month limit for the free tier of the service), I swtiched to using [FormSubmit](https://formsubmit.co/), which is HTML based, and has some disadvantages, but is completely free, doesn't any e-mails limit and is incredibly simple to use.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Also, because I'm not very used to Redux, I had some difficulty with it, especially when dealing with asynchronous data.
 
-## Learn More
+Overall, I was satisfied with this project, it was certainly challenging at times, but I think I learned a lot while making it, especially about how to develop software within a team and how to deal with time restraints.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Although it seems that all the requirements have been met, it would certainly add a lot to the application if it is possible to include a dashboard for all users. Even with that in mind, I think the final product is very good (specially if we consider the time restraints) and the whole team should be proud of it!
