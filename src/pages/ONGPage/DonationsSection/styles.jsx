@@ -43,7 +43,7 @@ const Container = styled.section`
             font-size: 32px;
         }
     }
-    @media (max-width: 700px) {
+    @media (max-width: 920px) {
         .donations {
             flex-direction: column;
             align-items: center;
