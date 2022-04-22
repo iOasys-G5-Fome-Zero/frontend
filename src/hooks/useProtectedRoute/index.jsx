@@ -1,17 +1,17 @@
-import { useContext, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import { UserContext } from "../../contexts/UserContext"
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
 
 const useProtectedRoute = () => {
-    const { loggedIn } = useContext(UserContext)
+  const { loggedIn } = useContext(UserContext);
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        if (!loggedIn) {
-            navigate("/login")
-        }
-    }, [loggedIn, navigate])
-}
+  useEffect(() => {
+    if (!loggedIn) {
+      navigate("/login");
+    }
+  }, [loggedIn, navigate]);
+};
 
-export default useProtectedRoute
+export default useProtectedRoute;

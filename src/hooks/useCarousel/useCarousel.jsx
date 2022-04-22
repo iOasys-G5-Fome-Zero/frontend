@@ -1,46 +1,39 @@
-import { useState, useMemo } from "react"
-import Indicator from "./styles"
-
+import { useState, useMemo } from "react";
+import Indicator from "./styles";
 
 function createIndicators(num, selected) {
-    
-    const result = []
+  const result = [];
 
-    for (let i = 0; i < num; i++) {
-        result.push((
-            <Indicator selected={i === selected} key={i}/>
-        ))
-    }
+  for (let i = 0; i < num; i++) {
+    result.push(<Indicator selected={i === selected} key={i} />);
+  }
 
-    return result
+  return result;
 }
-
 
 const useCarousel = (numElements) => {
-    const [selectedElement, setSelectedElement] = useState(0)
+  const [selectedElement, setSelectedElement] = useState(0);
 
-    
-    const indicators = useMemo(() => {
-        return createIndicators(numElements, selectedElement)
-    }, [selectedElement, numElements])
+  const indicators = useMemo(() => {
+    return createIndicators(numElements, selectedElement);
+  }, [selectedElement, numElements]);
 
-    const handleScroll = (e) => {
-        
-        let maxScrollLeft = e.target.scrollWidth - e.target.clientWidth
-        
-        const { scrollLeft } = e.target
-        
-        let newSelected = Math.trunc((scrollLeft / maxScrollLeft) * numElements)
+  const handleScroll = (e) => {
+    let maxScrollLeft = e.target.scrollWidth - e.target.clientWidth;
 
-        if (newSelected === numElements) newSelected--
-        
-        setSelectedElement(newSelected)
-    }
+    const { scrollLeft } = e.target;
 
+    let newSelected = Math.trunc((scrollLeft / maxScrollLeft) * numElements);
 
-    return {
-        indicators, handleScroll
-    }
-}
+    if (newSelected === numElements) newSelected--;
 
-export default useCarousel
+    setSelectedElement(newSelected);
+  };
+
+  return {
+    indicators,
+    handleScroll,
+  };
+};
+
+export default useCarousel;

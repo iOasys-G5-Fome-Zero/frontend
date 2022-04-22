@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     *, *::after, *::before {
@@ -52,12 +52,12 @@ export default createGlobalStyle`
     }
     h5{
         font-size: ${({ theme }) => theme.fontSizes.h5};
-        font-weight: ${({theme}) => theme.fontWeights.regular};
+        font-weight: ${({ theme }) => theme.fontWeights.regular};
         line-height: 150%;
     }
     h6{
         font-size: ${({ theme }) => theme.fontSizes.h6};
-        font-weight: ${({theme}) => theme.fontWeights.regular};
+        font-weight: ${({ theme }) => theme.fontWeights.regular};
         line-height: 150%;
     }
     
@@ -96,4 +96,4 @@ export default createGlobalStyle`
         font-weight: ${({ theme }) => theme.fontWeights.semibold};
     }
 
-`
+`;

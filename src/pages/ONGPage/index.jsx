@@ -5,16 +5,15 @@ import ContactForm from "../../components/ContactForm";
 import useProtectedRoute from "../../hooks/useProtectedRoute";
 
 const ONGPage = () => {
+  useProtectedRoute();
 
-    useProtectedRoute()
+  return (
+    <Layout>
+      <WelcomeSection />
+      <DonationsSection />
+      <ContactForm page="ong" />
+    </Layout>
+  );
+};
 
-    return (
-        <Layout>
-            <WelcomeSection/>
-            <DonationsSection/>
-            <ContactForm page="ong"/>
-        </Layout>
-    )
-}
-
-export default ONGPage
+export default ONGPage;

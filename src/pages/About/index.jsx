@@ -5,14 +5,17 @@ import Invite from "../../components/Inivite";
 import InstitutionsSection from "./InstitutionsSections";
 
 const About = () => {
-    return (
-        <Layout>
-            <WhoAreWe/>
-            <ProducersSection/>
-            <InstitutionsSection/>
-            <Invite title="Deseja ser uma instituição beneficiada?" path="/cadastro"/>
-        </Layout>
-    )
-}
+  return (
+    <Layout>
+      <WhoAreWe />
+      <ProducersSection />
+      <InstitutionsSection />
+      <Invite
+        title="Deseja ser uma instituição beneficiada?"
+        path="/cadastro"
+      />
+    </Layout>
+  );
+};
 
-export default About
+export default About;

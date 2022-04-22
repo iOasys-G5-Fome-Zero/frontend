@@ -4,16 +4,15 @@ import IncompletePageMessage from "../../components/IncompletePageMessage";
 import useProtectedRoute from "../../hooks/useProtectedRoute";
 
 const ProducerPage = () => {
+  useProtectedRoute();
 
-    useProtectedRoute()
+  return (
+    <Layout>
+      <FormShell>
+        <IncompletePageMessage />
+      </FormShell>
+    </Layout>
+  );
+};
 
-    return (
-        <Layout>
-            <FormShell>
-                <IncompletePageMessage/>
-            </FormShell>
-        </Layout>
-    )
-}
-
-export default ProducerPage
+export default ProducerPage;
