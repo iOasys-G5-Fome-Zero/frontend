@@ -1,26 +1,26 @@
-import { useState, useEffect } from "react";
-import * as S from "./styles";
+import { useState, useEffect } from 'react'
+import * as S from './styles'
 
 const TextArea = ({ label, bindFunction }) => {
-  const [data, setData] = useState("");
-  const [focus, setFocus] = useState(false);
+    const [data, setData] = useState('')
+    const [focus, setFocus] = useState(false)
 
-  useEffect(() => bindFunction(data), [data, bindFunction]);
+    useEffect(() => bindFunction(data), [data, bindFunction])
 
-  const labelUp = data || focus;
+    const labelUp = data || focus
 
-  return (
-    <S.Container labelUp={labelUp}>
-      <textarea
-        name={label}
-        id={label}
-        onChange={(e) => setData(e.target.value)}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-      ></textarea>
-      <label htmlFor={label}>{label}</label>
-    </S.Container>
-  );
-};
+    return (
+        <S.Container labelUp={labelUp}>
+            <textarea
+                name={label}
+                id={label}
+                onChange={(e) => setData(e.target.value)}
+                onFocus={() => setFocus(true)}
+                onBlur={() => setFocus(false)}
+            ></textarea>
+            <label htmlFor={label}>{label}</label>
+        </S.Container>
+    )
+}
 
-export default TextArea;
+export default TextArea

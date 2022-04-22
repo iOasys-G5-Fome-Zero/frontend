@@ -1,16 +1,16 @@
-import Layout from "../../components/Layout";
+import Layout from '../../components/Layout'
 // import LoginOrSignUpForm from "../../components/LoginOrSignUpForm";
-import SignUpForm from "../../components/SignUpForm";
-import ContactForm from "../../components/ContactForm";
+import SignUpForm from '../../components/SignUpForm'
+import ContactForm from '../../components/ContactForm'
 
 const Register = () => {
-  return (
-    <Layout>
-      {/* <LoginOrSignUpForm/> */}
-      <SignUpForm />
-      <ContactForm page="cadastro" />
-    </Layout>
-  );
-};
+    return (
+        <Layout>
+            {/* <LoginOrSignUpForm/> */}
+            <SignUpForm />
+            <ContactForm page="cadastro" />
+        </Layout>
+    )
+}
 
-export default Register;
+export default Register

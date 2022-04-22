@@ -1,7 +1,7 @@
-import * as S from "./styles";
+import * as S from './styles'
 
 const FormShell = ({ children }) => {
-  return <S.Container>{children}</S.Container>;
-};
+    return <S.Container>{children}</S.Container>
+}
 
-export default FormShell;
+export default FormShell

@@ -1,18 +1,18 @@
-import Layout from "../../components/Layout";
-import FormShell from "../../components/FormShell";
-import IncompletePageMessage from "../../components/IncompletePageMessage";
-import useProtectedRoute from "../../hooks/useProtectedRoute";
+import Layout from '../../components/Layout'
+import FormShell from '../../components/FormShell'
+import IncompletePageMessage from '../../components/IncompletePageMessage'
+import useProtectedRoute from '../../hooks/useProtectedRoute'
 
 const ConsumerPage = () => {
-  useProtectedRoute();
+    useProtectedRoute()
 
-  return (
-    <Layout>
-      <FormShell>
-        <IncompletePageMessage />
-      </FormShell>
-    </Layout>
-  );
-};
+    return (
+        <Layout>
+            <FormShell>
+                <IncompletePageMessage />
+            </FormShell>
+        </Layout>
+    )
+}
 
-export default ConsumerPage;
+export default ConsumerPage
