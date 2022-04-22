@@ -44,9 +44,15 @@ const Container = styled.section`
             margin: 20px auto;
             padding: 10px;
             gap: 10px;
-            width: 100%;
+            width: 95vw;
+            position: relative;
+            left: -12%;
             display: flex;
             overflow: scroll;
+            > * {
+                min-width: 70%;
+                margin-left: 15%;
+            }
         }
 
         .desktop {

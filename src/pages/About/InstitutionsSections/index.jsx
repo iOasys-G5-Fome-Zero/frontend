@@ -3,6 +3,7 @@ import { useMemo } from "react"
 import useCarousel from "../../../hooks/useCarousel/useCarousel"
 import InstitutionsImg1 from "../../../assets/Institutions/InstitutionsImg1.png"
 import InstitutionsImg2 from "../../../assets/Institutions/InstitutionsImg2.png"
+import MobileCarousel from "../../../components/MobileCarousel"
 
 const descriptions = [
     <div className="institutions-description">
@@ -55,12 +56,12 @@ const InstitutionsSection = () => {
                 e ajude-os a atingir a meta do mês doando suas moedas que serão
                 convertidas em alimentos para pessoas em situação de fome.
             </h5>
-            <div className="images-wrapper">
-                <div className="images" onScroll={handleScroll}>
-                    {imgsComponents}
-                </div>
+            <div className="images" onScroll={handleScroll}>
+                {imgsComponents}
             </div>
-            <div className="indicators-container">{indicators}</div>
+            <div className="mobile">
+                <MobileCarousel>{imgsComponents}</MobileCarousel>
+            </div>
         </S.Container>
     )
 }

@@ -5,6 +5,7 @@ import MariaImg from "../../../assets/Produtores/Maria.png"
 import JoseImg from "../../../assets/Produtores/Jose.png"
 import { useMemo } from "react"
 import useCarousel from "../../../hooks/useCarousel/useCarousel"
+import MobileCarousel from "../../../components/MobileCarousel"
 
 const descriptions = [
     <>
@@ -56,12 +57,12 @@ const ProducersSection = () => {
                 recebe alimentos frescos e cultivados com muito carinho e
                 cuidado.
             </h5>
-            <div className="images-wrapper">
-                <div className="images" onScroll={handleScroll}>
-                    {imgsComponents}
-                </div>
+            <div className="images" onScroll={handleScroll}>
+                {imgsComponents}
             </div>
-            <div className="indicators-container">{indicators}</div>
+            <div className="mobile">
+                <MobileCarousel>{imgsComponents}</MobileCarousel>
+            </div>
             <h5>
                 Os produtos produzidos pelos agricultores familiares são
                 especiais porque carregam a história de quem os produziu, o
