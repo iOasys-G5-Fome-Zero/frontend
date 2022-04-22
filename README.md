@@ -41,8 +41,6 @@ One of the main challenges I ran into was Responsiveness. Because of the predete
 
 Another issue was finding a way of sending the e-mails from the contact forms. After using [EmailJS](https://www.emailjs.com/) (which is very good, but has a 200 e-mail per month limit for the free tier of the service), I swtiched to using [FormSubmit](https://formsubmit.co/), which is HTML based, and has some disadvantages, but is completely free, doesn't any e-mails limit and is incredibly simple to use.
 
-Also, because I'm not very used to Redux, I had some difficulty with it, especially when dealing with asynchronous data.
-
 Overall, I was satisfied with this project, it was certainly challenging at times, but I think I learned a lot while making it, especially about how to develop software within a team and how to deal with time restraints.
 
 Although it seems that all the requirements have been met, it would certainly add a lot to the application if it is possible to include a dashboard for all users. Even with that in mind, I think the final product is very good (specially if we consider the time restraints) and the whole team should be proud of it!
